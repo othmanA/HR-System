@@ -21,7 +21,9 @@ namespace HR
             // INSERT THE SSN INTO THE DATABASE
             return true;
         }
-
+        
+        
+        // this method will do this 
         public static Employee[] getALL() {
 
             // EXAMPLE

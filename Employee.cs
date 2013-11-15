@@ -8,67 +8,11 @@ namespace HR
     public class Employee
     {
 
-        private int SSN;
-        private string firstName;
-        private char middleInitial;
-        private string lastName;
-        private string dob;
-
-
-        public Employee()
-        {
-           
-        }
-
-        private void setSSN(int ssn)
-        {
-            this.SSN = ssn;
-        }
-
-        public int getSSN()
-        {
-            return this.SSN;
-        }
-
-        public void setFirstName(string name)
-        {
-            this.firstName = name;
-        }
-
-        public string getFirstName()
-        {
-            return this.firstName;
-        }
-
-        public void setMiddleInitial(char m)
-        {
-            this.middleInitial = m;
-        }
-
-        public char getMiddleInitial()
-        {
-            return this.middleInitial;
-        }
-
-        public void setLastName(string lastName)
-        {
-            this.lastName = lastName;
-        }
-
-        public string getLastName()
-        {
-            return this.lastName;
-        }
-
-        public void setDob(string dob)
-        {
-            this.dob = dob;
-        }
-
-        public string getDob()
-        {
-            return this.dob;
-        }
+        private int SSN {get; set;}
+        private string firstName {get; set;}
+        private char middleInitial {get; set;}
+        private string lastName { get; set; }
+        private string dob {get; set;}
 
 
         public static bool create(int SSN) {

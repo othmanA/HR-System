@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ConsoleApplication1
+namespace HR
 {
     class Job
     {
@@ -11,5 +11,7 @@ namespace ConsoleApplication1
         private String contract { get; set; }
         private int hoursPerDay { get; set; }
         private DateTime firstDayAtWork { get; set; }
+
+
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace HR
 {
-    class User
+    public class User
     {
         public User(){
         }

@@ -61,9 +61,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="models\DatabaseHandler.cs" />
+    <Compile Include="models\Department.cs" />
+    <Compile Include="models\Document.cs" />
     <Compile Include="models\Employee.cs" />
+    <Compile Include="models\Income.cs" />
     <Compile Include="models\Job.cs" />
     <Compile Include="models\Position.cs" />
+    <Compile Include="models\Record.cs" />
     <Compile Include="models\TimeOff.cs" />
     <Compile Include="models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

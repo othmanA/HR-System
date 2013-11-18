@@ -8,24 +8,19 @@ namespace HR
     public class Job
     {
         private bool workingStatus;
-        private String contract { get; set; }
-        private int hoursPerDay { get; set; }
+        private string contract;
+        private int hoursPerDay;
         private DateTime firstDayAtWork;
 
         public Job(int status, String contract, int hoursPDay, String firstDay)
         {
-            // the contract and hoursPerDay should be set from here
-            this.hoursPerDay = hoursPDay;
-            this.contract = contract;
-
-            // use the setter to set the date
+            setContract(contract);
+            setHoursPerDay(hoursPDay);
             setFirstDayAtWork(firstDay);
 
-            // use the setter to set the boolean value
-            if (status == 1)
-                setWorkingStatus(true);
-            else
-                setWorkingStatus(false);
+            // this method is faster than if else.. we are passing the condition
+            // status == 1 will be sent to the method as true or false
+            setWorkingStatus((status == 1));
         }
 
         public void setFirstDayAtWork(String firstDayAtWork)
@@ -44,12 +39,30 @@ namespace HR
 
         public string getFirstDayAtWork()
         {
-            return this.firstDayAtWork.toString();
+            return firstDayAtWork.Date.ToString();
         }
 
         public bool getWorkingStatus()
         {
-            return this.status;
+            return workingStatus;
         }
+
+
+        public void setContract(string contract) {
+            this.contract = contract;
+        }
+
+        public string getContract() {
+            return this.contract;
+        }
+
+        public void setHoursPerDay(int newHours) {
+            hoursPerDay = newHours;
+        }
+
+        public int getHoursPerDay() {
+            return hoursPerDay;
+        }
+
     }
 }

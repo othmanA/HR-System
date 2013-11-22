@@ -8,11 +8,11 @@ namespace HR
     public class Employee
     {
 
-        private int SSN {get; set;}
-        private string firstName {get; set;}
-        private char middleInitial {get; set;}
-        private string lastName { get; set; }
-        private string dob {get; set;}
+        private int SSN;
+        private string firstName;
+        private char middleInitial;
+        private string lastName;
+        private string dob;
 
 
         public static bool create(int SSN) {

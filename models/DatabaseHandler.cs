@@ -74,7 +74,7 @@ namespace DatabaseHandlerTester
         }
 
         public void addParameter(string variable, string value) {
-            command.Parameters.Add(variable, value);
+            command.Parameters.AddWithValue(variable, value);
         }
 
     }

@@ -53,7 +53,7 @@
     <Content Include="assets\css\bootstrap.css" />
     <Content Include="assets\js\bootstrap.js" />
     <Content Include="assets\js\jquery.js" />
-    <Content Include="views\index.aspx" />
+    <Content Include="views\default.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -74,12 +74,12 @@
     <Compile Include="models\TimeOff.cs" />
     <Compile Include="models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="views\index.aspx.cs">
-      <DependentUpon>index.aspx</DependentUpon>
+    <Compile Include="views\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="views\index.aspx.designer.cs">
-      <DependentUpon>index.aspx</DependentUpon>
+    <Compile Include="views\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -50,6 +50,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\bootstrap.css" />
     <Content Include="views\index.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -80,7 +81,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="assets\css\" />
     <Folder Include="assets\font\" />
     <Folder Include="assets\img\" />
     <Folder Include="assets\js\" />

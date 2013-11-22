@@ -18,9 +18,6 @@ namespace HR_SYSTEM.models
             return true;
         }
 
-        public static save(){}
-
-        public static create(DateTime iDate, DateTime eDate, String type){}
 
     }
 }

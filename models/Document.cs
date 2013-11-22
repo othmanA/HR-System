@@ -12,10 +12,6 @@ namespace HR_SYSTEM.models
         private int size{get; set;}
         private String note{get; set;}
 
-        public bool upload() { }
 
-        public save(){}
-
-        public create(){}
     }
 }

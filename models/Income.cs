@@ -11,6 +11,6 @@ namespace HR_SYSTEM.models
         private float amount{get; set;}
         private String per{get; set;}
 
-        public static create(){}
+        
     }
 }

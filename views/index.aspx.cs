@@ -17,14 +17,9 @@ namespace HR_SYSTEM.views
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            DatabaseHandler d = new  DatabaseHandler();
-            d.setSQL("SELECT * FROM Employee");
-            d.queryExecute();
+           
+          
 
-            while (d.reader.Read()) {
-               Label1.Text = d.reader["Employee_firstNAme"].ToString();
-               DropDownList1.Items.Add("aa");
-            }
         }
     }
 }

@@ -51,6 +51,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\js\bootstrap.js" />
+    <Content Include="assets\js\jquery.js" />
     <Content Include="views\index.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -83,7 +85,6 @@
   <ItemGroup>
     <Folder Include="assets\font\" />
     <Folder Include="assets\img\" />
-    <Folder Include="assets\js\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

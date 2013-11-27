@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using DatabaseHandlerTester;
-
+using HRDatabase;
+using HR;
 namespace HR_SYSTEM.views
 {
     public partial class index : System.Web.UI.Page
@@ -17,9 +17,10 @@ namespace HR_SYSTEM.views
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-           
-          
 
+            Employee employee = new Employee();
+            employee.findById(3);
+            
         }
     }
 }

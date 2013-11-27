@@ -2,57 +2,87 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-
+using HRDatabase;
+using System.Data.SqlClient;
 namespace HR
 {
     public class Employee
     {
 
+        private int id;
         private int SSN;
         private string firstName;
         private char middleInitial;
         private string lastName;
-        private string dob;
+        private DateTime dob;
+        private char gender;
+        private int approved;
+        private DateTime created_at;
+        private string phone;
 
+        private Job job;
+        private Address address;
 
-        public static bool create(int SSN) {
-
-
-            // INSERT THE SSN INTO THE DATABASE
-            return true;
-        }
-        
-        
-        // this method will do this 
-        public static Employee[] getALL() {
-
-            // EXAMPLE
-            Employee e = new Employee();
-            Employee[] array = new Employee[10];
-            array[0] = e;
-            return array;
-        }
-
-        /*
-         * This method should migrate the information in this class with the database information.
+        /**
+         * Constructor
          * 
-         * */
-        public bool save() { 
-            // TO DO
+         */
+        public Employee() {
+          
+        }
 
-            return true;
+
+        /**
+         * Find By ID
+         * 
+         * This method should take an id as an argument and get the employee from database 
+         * 
+         */ 
+        public void findById(int id) {
+            DatabaseHandler handler = new DatabaseHandler();
+            handler.setSQL("SELECT * FROM Employee WHERE employee_id = @id");
+            handler.addParameter("@id", id.ToString());
+            handler.queryExecute();
+
+            while (handler.reader.Read()) {
+                // Sending all the data to the big setter
+                setObject(handler.reader);
+            }
         }
 
 
 
         /**
-         * This will find an employee by SSN
-         * Not working yet
-         * */
-        public static Employee find(string SSN){
+         * This method should set the data from any SQL reader
+         */
+        private void setObject(SqlDataReader r)
+        {
+            this.firstName = r["employee_firstName"].ToString();
 
-            Employee e = new Employee();
-            return e;
+            // Converting the object to char
+            string m = r["employee_middleInitial"].ToString();
+            this.middleInitial = m[0];
+
+            this.lastName = r["Employee_lastName"].ToString();
+            this.dob = DateTime.Parse(r["employee_firstName"].ToString());
+
+            // converting the object ot char (gender)
+            string g = r["employee_gender"].ToString();
+            this.gender = g[0];
+
+            this.approved = int.Parse(r["employee_approved"].ToString());
+            this.created_at = DateTime.Parse(r["employee_created_at"].ToString());
+            this.phone = r["employee_phone"].ToString();
+
+            // Preparing the variables for the Job constructor
+            int workingStatus = int.Parse(r["employee_working_status"].ToString());
+            string contract = r["employee_contract"].ToString();
+            int hoursPerDay = int.Parse(r["employee_hoursPerDay"].ToString());
+            string firstDay = r["employee_firstDay"].ToString();
+
+            // Setting the objects
+            this.job = new Job(workingStatus,contract,hoursPerDay,firstDay);
         }
+
     }
 }

@@ -11,8 +11,9 @@ namespace HR
         private string contract;
         private int hoursPerDay;
         private DateTime firstDayAtWork;
+        private Position position;
 
-        public Job(int status, String contract, int hoursPDay, String firstDay)
+        public Job(int status, string contract, int hoursPDay, string firstDay)
         {
             setContract(contract);
             setHoursPerDay(hoursPDay);

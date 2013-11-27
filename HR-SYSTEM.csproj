@@ -63,6 +63,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="models\Address.cs" />
     <Compile Include="models\DatabaseHandler.cs" />
     <Compile Include="models\Department.cs" />
     <Compile Include="models\Document.cs" />

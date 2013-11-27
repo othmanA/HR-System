@@ -24,7 +24,7 @@
  * When you want to execute non query 
  * just call handler.ExecuteNonQuery(); instead of queryExecute
  * 
- *
+ * - Othman
  * 
  */
 
@@ -36,7 +36,7 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Data;
 
-namespace DatabaseHandlerTester
+namespace HRDatabase
 {
     class DatabaseHandler
     {

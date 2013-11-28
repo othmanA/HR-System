@@ -8,7 +8,7 @@ namespace HR
 {
     public class EmployeesRecords
     {
-        private ArrayList records = new ArrayList();
+        private ArrayList items = new ArrayList();
 
         public EmployeesRecords(int employee_id) {
             init(employee_id);
@@ -38,7 +38,7 @@ namespace HR
                 bool approved = (handler.reader["record_approved"].ToString() == "1");
 
                 Record r = new Record(id,number,issueDate,expireDate,type,note,approved);
-                records.Add(r);
+                items.Add(r);
             }
         }
 
@@ -54,7 +54,8 @@ namespace HR
          * 
          */
         public Record getByRecordId(int recordId){
-            foreach (Record r in records) {
+            foreach (Record r in items)
+            {
                 if (r.getID() == recordId)
                     return r;
             }
@@ -73,7 +74,7 @@ namespace HR
          */
         public Record getByRecordNumber(int number)
         {
-            foreach (Record r in records)
+            foreach (Record r in items)
             {
                 if (r.getNumber() == number)
                     return r;
@@ -89,7 +90,7 @@ namespace HR
          * @return ArrayList of records
          */ 
         public ArrayList getAllRecords(){
-            return records;
+            return items;
         }
 
         /**
@@ -104,10 +105,11 @@ namespace HR
          */ 
         public bool delete(int record_id){
             int deleteChecker = 0;
-            foreach (Record r in records) {
+            foreach (Record r in items)
+            {
                 if (r.getID() == record_id) {
                     deleteChecker = r.delete();
-                    records.Remove(r);
+                    items.Remove(r);
                 }
             }
 

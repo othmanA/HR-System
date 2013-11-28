@@ -24,7 +24,7 @@ namespace HR
         private Job job;
         private Address address;
         private EmployeesRecords records;
-
+        private EmployeesTimeOff timeOff;
 
         public Employee() {
             
@@ -125,6 +125,9 @@ namespace HR
 
             // Get the records
             records = new EmployeesRecords(this.id);
+
+            // Get the time off
+            timeOff = new EmployeesTimeOff(this.id);
 
         }
 
@@ -283,6 +286,10 @@ namespace HR
 
         public EmployeesRecords getRecords() {
             return this.records;
+        }
+
+        public EmployeesTimeOff getTimeOff() {
+            return this.timeOff;
         }
 
 

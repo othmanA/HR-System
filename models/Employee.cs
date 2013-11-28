@@ -25,6 +25,7 @@ namespace HR
         private Address address;
         private EmployeesRecords records;
         private EmployeesTimeOff timeOff;
+        private EmployeesDocuments documents;
 
         public Employee() {
             
@@ -127,6 +128,9 @@ namespace HR
 
             // Get the time off
             timeOff = new EmployeesTimeOff(this.id);
+
+            // Get the documents
+            documents = new EmployeesDocuments(this.id);
 
         }
 
@@ -306,7 +310,11 @@ namespace HR
         }
 
 
-        
+        public EmployeesDocuments TimeOff
+        {
+            get { return documents; }
+            private set { documents = value; }
+        }
 
 
     }

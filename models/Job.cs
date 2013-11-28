@@ -13,61 +13,39 @@ namespace HR
         private DateTime firstDayAtWork;
         private Position position;
 
-        public Job(int status, string contract, int hoursPDay, string firstDay, int positionID)
+        public Job(bool workingStatus, string contract, int hoursPerDay, DateTime firstDayAtWork, int positionID)
         {
-            setContract(contract);
-            setHoursPerDay(hoursPDay);
-            setFirstDayAtWork(firstDay);
+            this.contract = contract;
+            this.workingStatus = workingStatus;
+            this.hoursPerDay = hoursPerDay;
+            this.firstDayAtWork = firstDayAtWork;
 
-            // this method is faster than if else.. we are passing the condition
-            // status == 1 will be sent to the method as true or false
-            setWorkingStatus((status == 1));
             this.position = new Position(positionID);
         }
 
-        public void setFirstDayAtWork(String firstDayAtWork)
-        {
-            this.firstDayAtWork = DateTime.Parse(firstDayAtWork);
+        public DateTime FirstDayAtWork {
+            get { return this.firstDayAtWork; }
+            set { firstDayAtWork = value; }
         }
 
-        // The value coming from the database is 1 or 0, convert it to boolean
-        public void setWorkingStatus(bool status)
-        {
-            this.workingStatus = status;
+        public bool WorkingStatus {
+            get { return workingStatus; }
+            set { workingStatus = value; }
         }
 
-        // And create your getter
-        // Because if we created our setter we need also to create the getter
-
-        public DateTime getFirstDayAtWork()
-        {
-            return this.firstDayAtWork;
+        public string Contract {
+            get { return contract; }
+            set { contract = value; }
         }
 
-        public bool getWorkingStatus()
-        {
-            return workingStatus;
+        public int HoursPerDay {
+            get { return hoursPerDay; }
+            set { hoursPerDay = value; }
         }
 
-
-        public void setContract(string contract) {
-            this.contract = contract;
-        }
-
-        public string getContract() {
-            return this.contract;
-        }
-
-        public void setHoursPerDay(int newHours) {
-            hoursPerDay = newHours;
-        }
-
-        public int getHoursPerDay() {
-            return hoursPerDay;
-        }
-
-        public Position getPosition() {
-            return this.position;
+        public Position Position {
+            get { return position; }
+            private set { position = value; }
         }
 
     }

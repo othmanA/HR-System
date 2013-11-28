@@ -27,24 +27,14 @@ namespace HR
             }
         }
 
-        public int getID(){
-            return this.id;
+        public int ID {
+            get { return id; }
+            private set { id = value; }
         }
 
-        public void setID(int newId) {
-            this.id = newId;
-
-            // we need to get the new name for this id as soon as possible
-            // we are calling the init again to get the name
-            this.init();
-        }
-
-        public void setName(string name) {
-            this.name = name;
-        }
-
-        public string getName() {
-            return this.name;
+        public string Name {
+            get { return name; }
+            set { name = value; } 
         }
     }
 }

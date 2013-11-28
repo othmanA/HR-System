@@ -11,7 +11,7 @@ namespace HR
     {
 
         private int id;
-        private string SSN;
+        private string _SSN;
         private string firstName;
         private char middleInitial;
         private string lastName;
@@ -105,14 +105,13 @@ namespace HR
 
 
             // Preparing the variables for the Job constructor
-            int workingStatus = int.Parse(r["employee_working_status"].ToString());
+            bool workingStatus = bool.Parse(r["employee_working_status"].ToString());
             string contract = r["employee_contract"].ToString();
             int hoursPerDay = int.Parse(r["employee_hoursPerDay"].ToString());
-            string firstDay = r["employee_firstDay"].ToString();
-            string position_id = r["employee_position"].ToString();
-            int position = int.Parse(position_id);
+            DateTime firstDay = DateTime.Parse(r["employee_firstDay"].ToString());
+            int position_id = int.Parse(r["employee_position"].ToString());
             // Setting the job object
-            this.job = new Job(workingStatus,contract,hoursPerDay,firstDay,position);
+            this.job = new Job(workingStatus,contract,hoursPerDay,firstDay,position_id);
 
 
             // Preparing the varirables for the address constructor
@@ -156,7 +155,7 @@ namespace HR
             handler.addParameter("@created_at", created);
             handler.addParameter("@phone", phone.ToString());
 
-            bool workingStatus = job.getWorkingStatus();
+            bool workingStatus = job.WorkingStatus;
             string WorkingstatusToInt;
 
             if(workingStatus)
@@ -166,17 +165,17 @@ namespace HR
 
             // JOB 
             handler.addParameter("@workingStatus", WorkingstatusToInt);
-            handler.addParameter("@contract", job.getContract());
-            handler.addParameter("@hoursPerDay", job.getHoursPerDay().ToString());
-            handler.addParameter("@firstDay", job.getFirstDayAtWork().Date.ToString());
-            handler.addParameter("@position", job.getPosition().getID().ToString());
+            handler.addParameter("@contract", job.Contract);
+            handler.addParameter("@hoursPerDay", job.HoursPerDay.ToString());
+            handler.addParameter("@firstDay", job.FirstDayAtWork.Date.ToString());
+            handler.addParameter("@position", job.Position.ID.ToString());
 
             // ADDRESS
-            handler.addParameter("@address1", address.getAddress1());
-            handler.addParameter("@address2", address.getAddress2());
-            handler.addParameter("@city", address.getCity());
-            handler.addParameter("@state", address.getState());
-            handler.addParameter("@zipCode", address.getZipCode().ToString());
+            handler.addParameter("@address1", address.Address1);
+            handler.addParameter("@address2", address.Address2);
+            handler.addParameter("@city", address.City);
+            handler.addParameter("@state", address.State);
+            handler.addParameter("@zipCode", address.ZipCode.ToString());
             
 
             int rows = handler.ExecuteNonQuery();
@@ -213,21 +212,21 @@ namespace HR
             // JOB INFO
 
             int workingStatus = 1;
-            if (this.job.getWorkingStatus() == false)
+            if (Job.WorkingStatus == false)
                 workingStatus = 0;
 
             handler.addParameter("@workingStatus", workingStatus.ToString());
-            handler.addParameter("@contract", this.job.getContract());
-            handler.addParameter("@hoursPerDay ", this.job.getHoursPerDay().ToString());
-            handler.addParameter("@firstDay", this.job.getFirstDayAtWork().Date.ToString());
-            handler.addParameter("@position", this.job.getPosition().getID().ToString());
+            handler.addParameter("@contract", Job.Contract);
+            handler.addParameter("@hoursPerDay ", Job.HoursPerDay.ToString());
+            handler.addParameter("@firstDay", Job.FirstDayAtWork.Date.ToString());
+            handler.addParameter("@position", Job.Position.ID.ToString());
             
             // ADDRESS INFO
-            handler.addParameter("@address1", address.getAddress1());
-            handler.addParameter("@address2", address.getAddress2());
-            handler.addParameter("@state", address.getState());
-            handler.addParameter("@city", address.getCity());
-            handler.addParameter("@zipCode", address.getZipCode().ToString());
+            handler.addParameter("@address1", Address.Address1);
+            handler.addParameter("@address2", Address.Address2);
+            handler.addParameter("@state", Address.State);
+            handler.addParameter("@city", Address.City);
+            handler.addParameter("@zipCode", Address.ZipCode.ToString());
 
 
 
@@ -235,107 +234,79 @@ namespace HR
             return handler.ExecuteNonQuery();
         }
 
-        //----------------------- GETTERS ----------------------\\
-        public string getFirstName() {
-            return this.firstName;
+        //----------------------- GETTERS AND SETTERS ----------------------\\
+        public string FirstName {
+            get { return this.firstName; }
+            set { firstName = value; }
         }
 
-        public string getSSN() {
-            return this.SSN;
+        public string SSN {
+            get { return _SSN; }
+            set { _SSN = value; }
         }
 
-        public int getID() {
-            return this.id;
+        public int Id {
+            get {return this.id; }
+            private set {id = value;}
         }
 
-        public char getMiddleInitial() {
-            return this.middleInitial;
+        public char MiddleInitial {
+            get { return this.middleInitial; }
+            set { middleInitial = value; }
         }
 
-        public string getLastName() {
-            return this.lastName;
+        public string LastName {
+            get { return this.lastName; }
+            set { lastName = value; }
         }
 
-        public DateTime getDob() {
-            return this.dob;
+        public DateTime Dob {
+            get {return this.dob; }
+            set {dob = value;}
         }
 
-        public char getGender() {
-            return this.gender;
+        public char Gender {
+            get { return this.gender; }
+            set {gender = value;}
         }
 
-        public bool getApprovedStatus() {
-            return this.approved;
+        public bool IsApproved {
+            get {return this.approved;}
+            private set {approved = value;}
         }
 
-        public DateTime getCreatedDateAndTime() {
-            return this.created_at;
+        public DateTime Created_at {
+            get { return this.created_at; }
+            private set {created_at = value;}
         }
 
-        public string getPhone() {
-            return this.phone;
+        public string Phone {
+            get { return this.phone; }
+            set {phone = value;}
         }
 
-        public Address getAddress() {
-            return this.address;
+        public Address Address {
+            get {return this.address; }
+            private set {address = value;}
         }
 
-        public Job getJob() {
-            return this.job;
+        public Job Job {
+            get {return job; }
+            private set {job = value;}
         }
 
-        public EmployeesRecords getRecords() {
-            return this.records;
+        public EmployeesRecords Records {
+            get {return records;}
+            private set {records = value;}
         }
 
-        public EmployeesTimeOff getTimeOff() {
-            return this.timeOff;
+        public EmployeesTimeOff TimeOff {
+            get {return timeOff; }
+            private set {timeOff = value;}
         }
 
 
-        //----------------------- SETTERS ----------------------\\
-        // WE DON't NEED TO SET the created_at and the id or the approved
-
-        public void setFirstName(string firstName) {
-            this.firstName = firstName;
-        }
-
-        public void setMiddleInitial(char m) {
-            this.middleInitial = m;
-        }
-
-        public void setLastName(string lastName) {
-            this.lastName = lastName;
-        }
-
-        public void setSSN(string SSN) {
-            this.SSN = SSN;
-        }
-
-        public void setDob(DateTime dob) {
-            this.dob = dob;
-        }
-
-        public void setGender(char g) {
-            this.gender = g;
-        }
-
-        public void setPhone(string phone) {
-            this.phone = phone;
-        }
-
-        public void setJob(Job job) {
-            this.job = job;
-        }
-
-        /// <summary>
-        ///   Use this method when you want to update the address object to a new one.
-        ///   If you are trying to update a propertiy of the object use getAddress then Set The property you want
-        /// </summary>
-        /// <param name="address"></param>
-        public void setAddress(Address address) {
-            this.address = address;
-        }
+        
 
 
     }

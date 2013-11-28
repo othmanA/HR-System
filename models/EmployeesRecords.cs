@@ -56,7 +56,7 @@ namespace HR
         public Record getByRecordId(int recordId){
             foreach (Record r in items)
             {
-                if (r.getID() == recordId)
+                if (r.ID == recordId)
                     return r;
             }
             return null;
@@ -76,7 +76,7 @@ namespace HR
         {
             foreach (Record r in items)
             {
-                if (r.getNumber() == number)
+                if (r.Number == number)
                     return r;
             }
             return null;
@@ -107,7 +107,7 @@ namespace HR
             int deleteChecker = 0;
             foreach (Record r in items)
             {
-                if (r.getID() == record_id) {
+                if (r.ID == record_id) {
                     deleteChecker = r.delete();
                     items.Remove(r);
                 }

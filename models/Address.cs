@@ -21,28 +21,34 @@ namespace HR
             this.zipCode = zipCode;
         }
 
-        public string getAddress1() {
-            return this.address1;
+        public string Address1 {
+            get { return address1; }
+            set { address1 = value; }
         }
 
-        public string getAddress2()
+        public string Address2
         {
-            return this.address2;
+            get { return address2; }
+            set { address2 = value; }
         }
 
-        public string getCity()
+
+        public string City
         {
-            return this.city;
+            get{ return this.city;}
+            set { city = value; }
         }
 
-        public string getState()
+        public string State
         {
-            return this.state;
+            get { return this.state; }
+            set { state = value; }
         }
 
-        public int getZipCode()
+        public int ZipCode
         {
-            return this.zipCode;
+            get { return this.zipCode; }
+            set { zipCode = value; }
         }
     }
 }

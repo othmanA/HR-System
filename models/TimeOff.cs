@@ -54,7 +54,7 @@ namespace HR
         }
 
 
-        // -- GETTERS
+        // -- GETTERS -- We don't need setters for this
         public int Id {
             get { return this.id; }
         }
@@ -83,8 +83,9 @@ namespace HR
             get { return this.type; } 
         }
 
-        public bool ApprovedStatus {
+        public bool IsApproved {
             get { return this.approved; }
+            private set { approved = value; }
         }
 
     }

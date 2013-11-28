@@ -54,61 +54,39 @@ namespace HR
         }
 
 
-        // ---- GETTERS ----
-        public int getID() {
-            return this.id;
+        public int ID {
+            get { return id; }
+            private set { id = value; }
         }
 
-        public int getNumber() {
-            return number;
+        public int Number {
+            get { return number; }
+            set { number = value; }
         }
 
-        public DateTime getIssueDate() {
-            return issueDate;
+        public DateTime IssueDate {
+            get { return issueDate; }
+            set { issueDate = value; }
         }
 
-        public DateTime getExpireDate() {
-            return expireDate;
+        public DateTime ExpireDate {
+            get { return expireDate; }
+            set { expireDate = value; }
         }
 
-        public string getType() { 
-            return type;
+        public string Type {
+            get { return type; }
+            set { type = value; }
         }
 
-        public string getNote(){
-            return note;
+        public string Note {
+            get { return note; }
+            set { note = value; }
         }
 
-        public bool getApprovedStatus() {
-            return this.approved;
-        }
-
-
-        //---- SETTERS ----
-        // There is no need to set the id
-        public void setNumber(int number) {
-            this.number = number;
-        }
-
-        public void setIssueDate(DateTime issueDate) {
-            this.issueDate = issueDate;
-        }
-
-        public void setExpireDate(DateTime expireDate)
-        {
-            this.expireDate = expireDate;
-        }
-
-        public void setType(string newType) {
-            type = newType;
-        }
-
-        public void setNote(string newNote) {
-            note = newNote;
-        }
-
-        public void setApprovedStatus(bool newStatus) {
-            approved = newStatus;
+        public bool IsApproved {
+            get { return approved; }
+            private set { approved = value; }
         }
 
     }

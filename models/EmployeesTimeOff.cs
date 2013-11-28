@@ -69,9 +69,9 @@ namespace HR
         /**
          * get ALL 
          * 
-         * This method will get all the records for an employee
+         * This method will get all the TimeOff for an employee
          * 
-         * @return ArrayList of records
+         * @return ArrayList of TimeOff
          */
         public ArrayList getALL()
         {

@@ -34,6 +34,10 @@ namespace HR
 
         public void setID(int newId) {
             this.id = newId;
+
+            // we need to get the new name for this id as soon as possible
+            // we are calling the init again to get the name
+            this.init();
         }
 
         public void setName(string name) {

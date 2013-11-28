@@ -39,6 +39,8 @@ namespace HR
                 // Sending all the data to the big setter
                 setObject(handler.reader);
             }
+
+           
         }
 
 
@@ -165,8 +167,59 @@ namespace HR
 
             int rows = handler.ExecuteNonQuery();
             return rows;
+
+
         }
 
+
+        /**
+         * This method should save all the data
+         * @return the number of rows affected (IT SHOULD BE 1 OR 0)
+         */ 
+        public int save() {
+            DatabaseHandler handler = new DatabaseHandler();
+            handler.setSQL("UPDATE Employee SET  employee_SSN = @SSN, employee_firstName = @firstName, employee_middleInital = @middleInitial, employee_lastName = @lastName, employee_dob = @dob, employee_gender = @gender, employee_working_status = @workingStatus, employee_contract = @contract, employee_hoursPerDay = @hoursPerDay, employee_firstDay = @firstDay, employee_position = @position, employee_approved = @approved, employee_address1 = @address1,  employee_address2 = @address2, employee_city = @city, employee_state = @state, employee_zip_code = @zipCode, employee_phone = @phone WHERE employee_id = @id");
+            handler.addParameter("@id", this.id.ToString());
+
+            // EMPLOYEE INFO
+            handler.addParameter("@SSN", this.SSN);
+            handler.addParameter("@firstName", this.firstName);
+            handler.addParameter("@middleInitial", middleInitial.ToString());
+            handler.addParameter("@lastName", this.lastName);
+            handler.addParameter("@dob", dob.Date.ToString());
+            handler.addParameter("@gender", this.gender.ToString());
+            handler.addParameter("@phone", this.phone);
+
+            int approvedStatus = 1;
+            if (this.approved == false)
+                approvedStatus = 0;
+
+            handler.addParameter("@approved", approvedStatus.ToString());
+
+            // JOB INFO
+
+            int workingStatus = 1;
+            if (this.job.getWorkingStatus() == false)
+                workingStatus = 0;
+
+            handler.addParameter("@workingStatus", workingStatus.ToString());
+            handler.addParameter("@contract", this.job.getContract());
+            handler.addParameter("@hoursPerDay ", this.job.getHoursPerDay().ToString());
+            handler.addParameter("@firstDay", this.job.getFirstDayAtWork().Date.ToString());
+            handler.addParameter("@position", this.job.getPosition().getID().ToString());
+            
+            // ADDRESS INFO
+            handler.addParameter("@address1", address.getAddress1());
+            handler.addParameter("@address2", address.getAddress2());
+            handler.addParameter("@state", address.getState());
+            handler.addParameter("@city", address.getCity());
+            handler.addParameter("@zipCode", address.getZipCode().ToString());
+
+
+
+
+            return handler.ExecuteNonQuery();
+        }
 
         //----------------------- GETTERS ----------------------\\
         public string getFirstName() {
@@ -253,6 +306,11 @@ namespace HR
             this.job = job;
         }
 
+        /// <summary>
+        ///   Use this method when you want to update the address object to a new one.
+        ///   If you are trying to update a propertiy of the object use getAddress then Set The property you want
+        /// </summary>
+        /// <param name="address"></param>
         public void setAddress(Address address) {
             this.address = address;
         }

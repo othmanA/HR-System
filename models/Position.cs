@@ -25,7 +25,6 @@ namespace HR
                     this.name = handler.reader["position_name"].ToString();
                 }
             }
-
         }
 
         public int getID(){

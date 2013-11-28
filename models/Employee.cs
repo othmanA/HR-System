@@ -26,6 +26,7 @@ namespace HR
         private EmployeesRecords records;
         private EmployeesTimeOff timeOff;
         private EmployeesDocuments documents;
+        private EmployeesIncome income;
 
         public Employee() {
             
@@ -131,6 +132,9 @@ namespace HR
 
             // Get the documents
             documents = new EmployeesDocuments(this.id);
+
+            // Get the income
+            income = new EmployeesIncome(this.id);
 
         }
 
@@ -316,6 +320,10 @@ namespace HR
             private set { documents = value; }
         }
 
-
+        public EmployeesIncome Income
+        {
+            get { return income; }
+            private set { income = value; }
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace HR
         private DateTime firstDayAtWork;
         private Position position;
 
-        public Job(int status, string contract, int hoursPDay, string firstDay)
+        public Job(int status, string contract, int hoursPDay, string firstDay, int positionID)
         {
             setContract(contract);
             setHoursPerDay(hoursPDay);
@@ -22,6 +22,7 @@ namespace HR
             // this method is faster than if else.. we are passing the condition
             // status == 1 will be sent to the method as true or false
             setWorkingStatus((status == 1));
+            this.position = new Position(positionID);
         }
 
         public void setFirstDayAtWork(String firstDayAtWork)
@@ -38,9 +39,9 @@ namespace HR
         // And create your getter
         // Because if we created our setter we need also to create the getter
 
-        public string getFirstDayAtWork()
+        public DateTime getFirstDayAtWork()
         {
-            return firstDayAtWork.Date.ToString();
+            return this.firstDayAtWork;
         }
 
         public bool getWorkingStatus()
@@ -63,6 +64,10 @@ namespace HR
 
         public int getHoursPerDay() {
             return hoursPerDay;
+        }
+
+        public Position getPosition() {
+            return this.position;
         }
 
     }

@@ -68,9 +68,10 @@ namespace HRDatabase
         public void queryExecute(){
             reader = command.ExecuteReader();
         }
-
-        public void ExecuteNonQuery() {
-            command.ExecuteNonQuery();
+        
+        //** Return the number of word affected by the last statment
+        public int ExecuteNonQuery() {
+            return (int) command.ExecuteNonQuery();
         }
 
         public void addParameter(string variable, string value) {

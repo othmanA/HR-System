@@ -99,9 +99,10 @@ namespace HR
             string contract = r["employee_contract"].ToString();
             int hoursPerDay = int.Parse(r["employee_hoursPerDay"].ToString());
             string firstDay = r["employee_firstDay"].ToString();
-
+            string position_id = r["employee_position"].ToString();
+            int position = int.Parse(position_id);
             // Setting the job object
-            this.job = new Job(workingStatus,contract,hoursPerDay,firstDay);
+            this.job = new Job(workingStatus,contract,hoursPerDay,firstDay,position);
 
 
             // Preparing the varirables for the address constructor
@@ -117,19 +118,53 @@ namespace HR
 
         /**
          * create
+         * 
+         * IS A static method that will return 0 if the creations has not compleated or the ID of the new Employee if the employee was created Successfully 
          */
-        public bool create() {
-            if (this.id == null) {
-                DatabaseHandler handler = new DatabaseHandler();
+        public static int create(string SSN, string FirstName, char middleInitial, string lastName, DateTime dob, char gender, string phone, Job job, Address address) {
+            
+            DatabaseHandler handler = new DatabaseHandler();
 
-                string insertSt = "INSERT INTO Employee (employee_id, employee_SSN, employee_firstName, employee_middleInital, employee_lastName, employee_dob, employee_working_status, employee_contract, employee_hoursPerDay, employee_firstDay, employee_gender, employee_position, employee_approved, employee_created_at, employee_address1, employee_address2, employee_city, employee_state, employee_zip_code, employee_phone) VALUES        (NULL,@SSN,@firstName,@middleInitial,@lastName,@DOB,@workingStatus,@contract,@hoursPerDay,@firstDay,@gender,@position,@approved,@created_at,@address1,@address2,@city,@state,@zipCode,@phone)";
-                handler.setSQL(insertSt);
+            string insertSt = "INSERT INTO Employee (employee_SSN, employee_firstName, employee_middleInital, employee_lastName, employee_dob, employee_working_status, employee_contract, employee_hoursPerDay, employee_firstDay, employee_gender, employee_position, employee_approved, employee_created_at, employee_address1, employee_address2, employee_city, employee_state, employee_zip_code, employee_phone) VALUES        (@SSN,@firstName,@middleInitial,@lastName,@DOB,@workingStatus,@contract,@hoursPerDay,@firstDay,@gender,@position,@approved,@created_at,@address1,@address2,@city,@state,@zipCode,@phone)";
+            handler.setSQL(insertSt);
 
-                // TO DO .. Working on the parameters
+            //Adding the employee information
+            handler.addParameter("@SSN", SSN);
+            handler.addParameter("@firstName", FirstName);
+            handler.addParameter("@middleInitial", middleInitial.ToString());
+            handler.addParameter("@lastName", lastName);
+            handler.addParameter("@DOB", dob.Date.ToString());
+            handler.addParameter("@gender", gender.ToString());
+            handler.addParameter("@approved", "0");
+            string created = DateTime.Now.ToString();
+            handler.addParameter("@created_at", created);
+            handler.addParameter("@phone", phone.ToString());
 
-            }
+            bool workingStatus = job.getWorkingStatus();
+            string WorkingstatusToInt;
 
-            return false;
+            if(workingStatus)
+                WorkingstatusToInt = "1";
+            else
+                WorkingstatusToInt = "0";
+
+            // JOB 
+            handler.addParameter("@workingStatus", WorkingstatusToInt);
+            handler.addParameter("@contract", job.getContract());
+            handler.addParameter("@hoursPerDay", job.getHoursPerDay().ToString());
+            handler.addParameter("@firstDay", job.getFirstDayAtWork().Date.ToString());
+            handler.addParameter("@position", job.getPosition().getID().ToString());
+
+            // ADDRESS
+            handler.addParameter("@address1", address.getAddress1());
+            handler.addParameter("@address2", address.getAddress2());
+            handler.addParameter("@city", address.getCity());
+            handler.addParameter("@state", address.getState());
+            handler.addParameter("@zipCode", address.getZipCode().ToString());
+            
+
+            int rows = handler.ExecuteNonQuery();
+            return rows;
         }
 
 

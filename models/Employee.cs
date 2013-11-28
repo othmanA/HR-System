@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using HRDatabase;
 using System.Data.SqlClient;
+
 namespace HR
 {
     public class Employee
@@ -22,6 +23,13 @@ namespace HR
 
         private Job job;
         private Address address;
+        private EmployeesRecords records;
+
+
+        public Employee() {
+            
+        }
+
 
         /**
          * Find By ID
@@ -114,6 +122,9 @@ namespace HR
             string state = r["employee_state"].ToString();
             int zipCode = int.Parse(r["employee_zip_code"].ToString());
             this.address = new Address(address1, address2, city, state, zipCode);
+
+            // Get the records
+            records = new EmployeesRecords(this.id);
 
         }
 
@@ -268,6 +279,10 @@ namespace HR
 
         public Job getJob() {
             return this.job;
+        }
+
+        public EmployeesRecords getRecords() {
+            return this.records;
         }
 
 

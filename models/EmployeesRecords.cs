@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Collections;
 using HRDatabase;
-namespace HR.Collections
+namespace HR
 {
-    class EmployeesRecords
+    public class EmployeesRecords
     {
         private ArrayList records = new ArrayList();
 
@@ -33,7 +33,7 @@ namespace HR.Collections
                 int number = int.Parse(handler.reader["record_number"].ToString());
                 DateTime issueDate = DateTime.Parse(handler.reader["record_issue_date"].ToString());
                 DateTime expireDate = DateTime.Parse(handler.reader["record_expire_date"].ToString());
-                string type = handler.reader["recore_type"].ToString();
+                string type = handler.reader["record_type"].ToString();
                 string note = handler.reader["record_note"].ToString();
                 bool approved = (handler.reader["record_approved"].ToString() == "1");
 

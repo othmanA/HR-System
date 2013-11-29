@@ -2,3 +2,5 @@ C:\Users\OthmanAba\Documents\GitHub\HR-System\bin\HR-SYSTEM.dll
 C:\Users\OthmanAba\Documents\GitHub\HR-System\bin\HR-SYSTEM.pdb
 C:\Users\OthmanAba\Documents\GitHub\HR-System\obj\Debug\HR-SYSTEM.dll
 C:\Users\OthmanAba\Documents\GitHub\HR-System\obj\Debug\HR-SYSTEM.pdb
+C:\Users\bmachart\Documents\GitHub\HR-System\obj\Debug\HR-SYSTEM.dll
+C:\Users\bmachart\Documents\GitHub\HR-System\obj\Debug\HR-SYSTEM.pdb

@@ -6,18 +6,14 @@
 <head runat="server">
     <title></title>
     <link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
-
     <script src="../assets/js/jquery.js"></script>
     <script src="../assets/js/bootstrap.js"></script>
 </head>
 <body>
-
  <!-- NAVBAR
     ================================================== -->
     <div class="navbar-wrapper">
       <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
-     
-
         <div class="navbar navbar-inverse navbar-fixed-top">
           <div class="navbar-inner">
            <div class="container">
@@ -61,7 +57,7 @@
         <h1>&nbsp;</h1>
         <h1>&nbsp;</h1>
         <h1>&nbsp;</h1>
-        <h1>Welcome, </h1>
+        <h1>Welcome to the Human Resources System, </h1>
     </div>
     <asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="Button" 
         CssClass="btn btn-primary" />

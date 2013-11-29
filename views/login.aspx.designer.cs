@@ -10,7 +10,7 @@
 namespace HR_SYSTEM.views {
     
     
-    public partial class index {
+    public partial class login {
         
         /// <summary>
         /// form1 control.

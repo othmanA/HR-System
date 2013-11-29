@@ -69,6 +69,10 @@
     <Compile Include="models\Department.cs" />
     <Compile Include="models\Document.cs" />
     <Compile Include="models\Employee.cs" />
+    <Compile Include="models\EmployeesDocuments.cs" />
+    <Compile Include="models\EmployeesIncome.cs" />
+    <Compile Include="models\EmployeesRecords.cs" />
+    <Compile Include="models\EmployeesTimeOff.cs" />
     <Compile Include="models\Income.cs" />
     <Compile Include="models\Job.cs" />
     <Compile Include="models\Position.cs" />

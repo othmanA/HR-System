@@ -17,9 +17,6 @@ namespace HR_SYSTEM.views
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-
-            Employee employee = new Employee();
-            employee.findById(3);
             
         }
     }

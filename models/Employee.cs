@@ -314,7 +314,7 @@ namespace HR
         }
 
 
-        public EmployeesDocuments TimeOff
+        public EmployeesDocuments Documents
         {
             get { return documents; }
             private set { documents = value; }

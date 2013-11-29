@@ -7,7 +7,7 @@ using HRDatabase;
 
 namespace HR
 {
-    class EmployeesDocuments
+    public class EmployeesDocuments
     {
 
         private ArrayList items = new ArrayList();

@@ -5,7 +5,7 @@ using System.Text;
 using HRDatabase;
 namespace HR
 {
-    class TimeOff
+    public class TimeOff
     {
         private int id;
         private DateTime startDate;

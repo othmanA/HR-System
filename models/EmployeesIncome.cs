@@ -6,7 +6,7 @@ using System.Collections;
 using HRDatabase;
 namespace HR
 {
-    class EmployeesIncome
+    public class EmployeesIncome
     {
         private ArrayList items = new ArrayList();
 

@@ -6,7 +6,7 @@ using System.Collections;
 using HRDatabase;
 namespace HR
 {
-    class EmployeesTimeOff
+    public class EmployeesTimeOff
     {
         private ArrayList items = new ArrayList();
 

@@ -2,7 +2,7 @@
 
 
 <link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
-
+<link href="../assets/css/ui-lightness/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css" />
 <div class="container">
 <br />
 <div class="navbar">
@@ -27,3 +27,4 @@
 
 <script src="../assets/js/jquery.js" type="text/javascript"></script>
 <script src="../assets/js/bootstrap.js" type="text/javascript"></script>
+<script src="../assets/js/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>

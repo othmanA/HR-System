@@ -87,8 +87,10 @@
 			<td>Date of Birth:</td>
 			<td>
 				
-			    <asp:TextBox ID="DOBTextBox" runat="server"></asp:TextBox>
-				
+			    <asp:TextBox ID="DOBTextBox" runat="server" placeholder="click to view the calendar"></asp:TextBox>
+			    <script>
+			        $("#DOBTextBox").datepicker({ changeYear: true, changeMonth: true, defaultDate: "-20y"});
+                </script>
 			</td>
 			
 		</tr>
@@ -173,7 +175,10 @@
         <tr>
 			<td>First day at work:</td>
 			<td>
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                <asp:TextBox ID="FirstDayTextBox" runat="server"></asp:TextBox>
+                <script>
+                    $("#FirstDayTextBox").datepicker({ changeYear: true, changeMonth: true });
+                </script>
             </td>
 		</tr>
 

@@ -10,6 +10,10 @@
     <form id="form1" runat="server">
     <div>
     
+        This is the main page<br />
+        <br />
+        you can visit the login page <a href="login.aspx">Here</a>
+    
     </div>
     </form>
 </body>

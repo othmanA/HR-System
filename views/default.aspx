@@ -13,7 +13,9 @@
         This is the main page<br />
         <br />
         you can visit the login page <a href="login.aspx">Here</a>
-    
+        <br />
+
+        you can visit the Employee Create <a href="EmployeeCreate.aspx">Here</a>
     </div>
     </form>
 </body>

@@ -129,10 +129,6 @@ namespace HR
             set { username = value; }
         }
 
-        public string Password {
-            private get { return password; }
-            private set { password = value; }
-        }
 
         public string Email {
             get { return email; }

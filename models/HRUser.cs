@@ -14,12 +14,20 @@ namespace HR
         private string fullName;
         private string email;
 
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="user_id"></param>
         public HRUser(int user_id)
         {
             this.id = user_id;
             this.init();
         }
 
+        /// <summary>
+        /// Getting the user information from the database
+        /// </summary>
         private void init() {
             DatabaseHandler handler = new DatabaseHandler();
             handler.setSQL("SELECT * FROM User WHERE user_id = @id");
@@ -34,7 +42,12 @@ namespace HR
         }
         
 
-        // This method will return null if the user informaiton are incorrect
+        /// <summary>
+        /// This method will return an object of class user if the user found. Otherwise it will return null
+        /// </summary>
+        /// <param name="username">The username of the user</param>
+        /// <param name="password">The password of the user</param>
+        /// <returns></returns>
         public static HRUser authenticate(string username, string password)
         {
 
@@ -71,6 +84,65 @@ namespace HR
             return handler.ExecuteNonQuery();
         }
 
+
+        /// <summary>
+        /// Saving the information to the database (Except for the password)
+        /// </summary>
+        /// <returns></returns>
+        public bool save() {
+            DatabaseHandler handler = new DatabaseHandler();
+            handler.setSQL("UPDATE [User] SET user_name = @u, user_email = @e, user_full_name = @f WHERE user_id = @id");
+            handler.addParameter("@u", username);
+            handler.addParameter("@e", email);
+            handler.addParameter("@f", fullName);
+            handler.addParameter("@id", id.ToString());
+
+            return (handler.ExecuteNonQuery() == 1);
+        }
+
+
+        public bool updatePassword(string oldPassword, string newPassword) {
+
+            if (this.password == oldPassword)
+            {
+                DatabaseHandler handler = new DatabaseHandler();
+                handler.setSQL("UPDATE [User] SET user_password = @pass WHERE user_id = @id");
+                handler.addParameter("@pass", newPassword);
+                handler.addParameter("@id", id.ToString());
+
+                return (handler.ExecuteNonQuery() == 1);
+            }
+            else {
+                return false;
+            }
+        }
+
+
+        //----- GETTERS AND SETTERS -----//
+        public int ID {
+            get { return id; }
+            private set { id = value; }
+        }
+
+        public string Username {
+            get { return username; }
+            set { username = value; }
+        }
+
+        public string Password {
+            private get { return password; }
+            private set { password = value; }
+        }
+
+        public string Email {
+            get { return email; }
+            set { email = value; }
+        }
+
+        public string Name {
+            get { return fullName; }
+            set { fullName = value;  }
+        }
 
 
 

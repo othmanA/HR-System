@@ -28,11 +28,6 @@ namespace HR
         private EmployeesDocuments documents;
         private EmployeesIncome income;
 
-        public Employee() {
-            
-        }
-
-
         /**
          * Find By ID
          * 

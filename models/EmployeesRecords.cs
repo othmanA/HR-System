@@ -22,7 +22,7 @@ namespace HR
          * @pram int id
          * @return none
          * */
-        private void init(int employee_id){
+        public void init(int employee_id){
             DatabaseHandler handler = new DatabaseHandler();
             handler.setSQL("SELECT * FROM Record WHERE employee = @employee_id");
             handler.addParameter("@employee_id", employee_id.ToString());
@@ -89,7 +89,7 @@ namespace HR
          * 
          * @return ArrayList of records
          */ 
-        public ArrayList getAllRecords(){
+        public ArrayList getALL(){
             return items;
         }
 

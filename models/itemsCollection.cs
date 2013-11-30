@@ -5,10 +5,10 @@ using System.Text;
 using System.Collections;
 namespace HR
 {
-    interface itemsCollection
+    public interface itemsCollection
     {
-        public void init(int employee_id);
-        public ArrayList getALL();
-        public bool delete(int id);
+         void init(int employee_id);
+         ArrayList getALL();
+         bool delete(int id);
     }
 }

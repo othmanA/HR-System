@@ -7,7 +7,7 @@ using HRDatabase;
 
 namespace HR
 {
-    public class EmployeesDocuments
+    public class EmployeesDocuments : itemsCollection
     {
 
         private ArrayList items = new ArrayList();
@@ -25,7 +25,7 @@ namespace HR
          * @pram int id
          * @return none
          * */
-        private void init(int employee_id)
+        public void init(int employee_id)
         {
             DatabaseHandler handler = new DatabaseHandler();
             handler.setSQL("SELECT * FROM Document WHERE employee = @employee_id");

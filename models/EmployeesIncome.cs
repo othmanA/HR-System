@@ -6,7 +6,7 @@ using System.Collections;
 using HRDatabase;
 namespace HR
 {
-    public class EmployeesIncome
+    public class EmployeesIncome : itemsCollection
     {
         private ArrayList items = new ArrayList();
 
@@ -19,7 +19,7 @@ namespace HR
         /**
          * Init
          * */
-        private void init(int employee_id)
+        public void init(int employee_id)
         {
             DatabaseHandler handler = new DatabaseHandler();
             handler.setSQL("SELECT * FROM Income WHERE income_id = @employee_id");

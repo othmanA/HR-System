@@ -74,6 +74,7 @@
     <Compile Include="models\EmployeesRecords.cs" />
     <Compile Include="models\EmployeesTimeOff.cs" />
     <Compile Include="models\Income.cs" />
+    <Compile Include="models\itemsCollection.cs" />
     <Compile Include="models\Job.cs" />
     <Compile Include="models\Position.cs" />
     <Compile Include="models\Record.cs" />

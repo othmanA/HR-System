@@ -24,7 +24,7 @@ namespace HR
          * @pram int id
          * @return none
          * */
-        private void init(int employee_id)
+        public void init(int employee_id)
         {
             DatabaseHandler handler = new DatabaseHandler();
             handler.setSQL("SELECT * FROM Time_off WHERE employee = @employee_id");

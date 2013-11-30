@@ -30,8 +30,9 @@ namespace HR
         /// </summary>
         private void init() {
             DatabaseHandler handler = new DatabaseHandler();
-            handler.setSQL("SELECT * FROM User WHERE user_id = @id");
+            handler.setSQL("SELECT * FROM [User] WHERE user_id = @id");
             handler.addParameter("@id", id.ToString());
+            handler.queryExecute();
             while (handler.reader.Read()) {
                 username = handler.reader["user_name"].ToString();
                 password = handler.reader["user_password"].ToString();
@@ -52,10 +53,10 @@ namespace HR
         {
 
             DatabaseHandler handler = new DatabaseHandler();
-            handler.setSQL("SELECT * FROM User WHERE user_name = @name AND user_password = @password");
+            handler.setSQL("SELECT * FROM [User] WHERE user_name = @name AND user_password = @password");
             handler.addParameter("@name", username);
             handler.addParameter("@password", password);
-            
+            handler.queryExecute();
             while (handler.reader.Read()) {
                 HRUser u = new HRUser(int.Parse(handler.reader["user_id"].ToString()));
                 return u;

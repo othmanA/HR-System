@@ -11,7 +11,34 @@ namespace HR_SYSTEM.views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            Panel1.Visible = false;
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+
+                string username = TextBox1.Text;
+                string password = TextBox2.Text;
+                HRUser user = HRUser.authenticate(username, password);
+                if (user == null)
+                {
+                    Label2.Text = "Username and Password are incorrect!";
+                    Panel1.Visible = true;
+                    Session["user"] = null;
+                }
+                else {
+                    Session["user"] = user;
+                    Response.Redirect("Default.aspx");
+                }
+
+            }catch(Exception exception){
+                Panel1.Visible = true;
+                Label2.Text = exception.Message + exception.StackTrace;
+                
+            }
         }
     }
 }

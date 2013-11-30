@@ -15,7 +15,7 @@
         background-color: #f5f5f5;
       }
 
-      .form-signin {
+      .form1 {
         max-width: 300px;
         padding: 19px 29px 29px;
         margin: 0 auto 20px;
@@ -28,12 +28,13 @@
            -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
                 box-shadow: 0 1px 2px rgba(0,0,0,.05);
       }
-      .form-signin .form-signin-heading,
-      .form-signin .checkbox {
+      .form1 .form-signin-heading,
+      .form1 .checkbox {
         margin-bottom: 10px;
+        text-align: center;
       }
-      .form-signin input[type="text"],
-      .form-signin input[type="password"] {
+      .form1 input[type="text"],
+      .form1 input[type="password"] {
         font-size: 16px;
         height: auto;
         margin-bottom: 15px;
@@ -41,67 +42,39 @@
       }
 
     </style>
-    <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
 
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="../assets/js/html5shiv.js"></script>
-    <![endif]-->
-
-    <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
-      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
-                    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
-                                   <link rel="shortcut icon" href="../assets/ico/favicon.png">
   </head>
 <body>
+<div class="container">
+    <center><asp:Label ID="Label1" runat="server" 
+            style="font-weight: 700;text-align:center; font-size: 36px; color: #0033CC"
+            Text="Human Resources Software Program"></asp:Label></center>
+            <hr />
 
-    <form id="form1" runat="server">
-    <div class="container">
+
+            <asp:Panel ID="Panel1" runat="server">
+            <div class="alert alert-danger">
+                <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+            </div>
+    </asp:Panel>
+    <br />
+
+
     
-        <asp:Label ID="Label1" runat="server" 
-            style="font-weight: 700; font-size: large; color: #0033CC" 
-            Text="Human Resources Software Program"></asp:Label>
-    
-    </div>
-    </form>
-    <html lang="en">
-
-
-  <body>
+    <br /><br /><br />
+    <form id="form1" runat="server" class="form1">
 
     <div class="container">
-
-      <form class="form-signin">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="text" class="input-block-level" placeholder="login name">
-        <input type="password" class="input-block-level" placeholder="password">
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-        <button class="btn btn-large btn-primary" type="submit">Sign in</button>
-      </form>
-
+        <h4>Sign in</h4>
+        <hr />
+        <asp:TextBox ID="TextBox1" runat="server" placeholder="Username"></asp:TextBox><br />
+        <asp:TextBox ID="TextBox2" runat="server" TextMode="Password" placeholder="password"></asp:TextBox><Br /> <hr />
+        <asp:Button ID="Button1" runat="server" Text="Login" 
+            CssClass="btn btn-primary" onclick="Button1_Click" />
     </div> <!-- /container -->
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../assets/js/jquery.js"></script>
-    <script src="../assets/js/bootstrap-transition.js"></script>
-    <script src="../assets/js/bootstrap-alert.js"></script>
-    <script src="../assets/js/bootstrap-modal.js"></script>
-    <script src="../assets/js/bootstrap-dropdown.js"></script>
-    <script src="../assets/js/bootstrap-scrollspy.js"></script>
-    <script src="../assets/js/bootstrap-tab.js"></script>
-    <script src="../assets/js/bootstrap-tooltip.js"></script>
-    <script src="../assets/js/bootstrap-popover.js"></script>
-    <script src="../assets/js/bootstrap-button.js"></script>
-    <script src="../assets/js/bootstrap-collapse.js"></script>
-    <script src="../assets/js/bootstrap-carousel.js"></script>
-    <script src="../assets/js/bootstrap-typeahead.js"></script>
-
+      </form>
   </body>
+
+    
 
 </html>

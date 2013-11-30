@@ -11,7 +11,7 @@ namespace HR_SYSTEM
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Redirect("views/Default.aspx");
+            Response.Redirect("views/Login.aspx");
         }
     }
 }

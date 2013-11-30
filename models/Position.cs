@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using HRDatabase;
@@ -13,6 +13,11 @@ namespace HR
         public Position(int positionID) {
             this.id = positionID;
             this.init();
+        }
+
+        public Position(int id, string name) {
+            this.id = id;
+            this.name = name;
         }
 
         private void init(){
@@ -35,6 +40,27 @@ namespace HR
         public string Name {
             get { return name; }
             set { name = value; } 
+        }
+
+        /// <summary>
+        /// This will return an arraylist contain the name and id for each 
+        /// </summary>
+        /// <returns></returns>
+        public static ArrayList getALL() {
+            ArrayList list = new ArrayList();
+
+            DatabaseHandler handler = new DatabaseHandler();
+            handler.setSQL("SELECT * FROM Position");
+            handler.queryExecute();
+            while (handler.reader.Read()) {
+
+                int id = int.Parse(handler.reader["position_id"].ToString());
+                string name = handler.reader["position_name"].ToString();
+                Position p = new Position(id,name);
+                list.Add(p);
+            }
+
+            return list;
         }
     }
 }

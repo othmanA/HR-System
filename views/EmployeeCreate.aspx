@@ -29,11 +29,7 @@
         
 &nbsp;<div class="container">
 
-<asp:Panel ID="Panel1" runat="server">
-               <div class="alert alert-danger">
-            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-            </div>
-        </asp:Panel>
+
 
 
         <div class="well">

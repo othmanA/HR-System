@@ -22,9 +22,27 @@
     </ul>
   </div>
 </div>
+
+    <asp:Panel ID="AlertErrorPanel" runat="server" ClientIDMode="Static">
+    <div class="alert alert-danger"> <h4>Error:</h4>
+        <asp:Label ID="AlertErrorLabel" runat="server" Text="Label"></asp:Label>
+    </div>
+    </asp:Panel>
+
+
+        <asp:Panel ID="AlertSuccessPanel" runat="server" ClientIDMode="Static">
+    <div class="alert alert-success"> 
+        <asp:Label ID="AlertSuccessLabel" runat="server" Text="Label"></asp:Label>
+    </div>
+    </asp:Panel>
+
+
+
 </div>
 
 
 <script src="../assets/js/jquery.js" type="text/javascript"></script>
 <script src="../assets/js/bootstrap.js" type="text/javascript"></script>
 <script src="../assets/js/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+
+    

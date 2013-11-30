@@ -11,17 +11,13 @@ namespace HR_SYSTEM.views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // This panel is for errors messaages.
-            Panel1.Visible = false;
-
             
-
-
             // We need to fill all the dropdowns before while we load the page.
             FillPositions();
             FillContractTypes();
             FillWorkingHours();
             FillWorkingStatus();
+            FillGender();
         }
 
         protected void FillPositions() {
@@ -35,6 +31,12 @@ namespace HR_SYSTEM.views
         protected void FillContractTypes() { 
             ContractTypeDropDown.Items.Add("Full-Time");
             ContractTypeDropDown.Items.Add("Part-Time");
+        }
+
+        protected void FillGender()
+        {
+            GenderDropDown.Items.Add("Male");
+            GenderDropDown.Items.Add("Female");
         }
 
         protected void FillWorkingHours()
@@ -52,9 +54,50 @@ namespace HR_SYSTEM.views
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            // Testing 
-            Label1.Text = ContractTypeDropDown.SelectedItem.Text.ToString();
-            Panel1.Visible = true;
+
+            // Getting the employee Information
+            
+                // Employee Information
+                string SSN = SSNTextBox.Text;
+                string firstName = FirstNameTextBox.Text;
+                char middleInitial = MiddleInitialTextBox.Text.ToCharArray()[0];
+                string lastName = LastNameTextBox.Text;
+                DateTime dob = DateTime.Parse(DOBTextBox.Text.ToString());
+                string phone = PhoneNumberTextBox.Text;
+                char gender = GenderDropDown.SelectedItem.Text.ToCharArray()[0];
+
+                // Address Parsing 
+                string address1 = Address1TextBox.Text;
+                string address2 = Address2TextBox.Text;
+                string city = CityTextBox.Text;
+                string state = StateTextBox.Text;
+                int zipCode = int.Parse(ZipCodeTextBox.Text);
+
+                // JOB 
+                int position_id = int.Parse(PositionsDropDownList.SelectedItem.Value);
+                string contract = ContractTypeDropDown.SelectedItem.Text;
+                int workingHours = int.Parse(WorkingHoursDropDown.SelectedItem.Text);
+                bool workingStatus = (WorkingStatusDropDown.SelectedItem.Text == "Working");
+                DateTime firstDay = DateTime.Parse(FirstDayTextBox.Text.ToString());
+
+                //Creating a new Job Instance
+                Job j = new Job(workingStatus, contract, workingHours, firstDay, position_id);
+
+                //Creating the Address instance
+                Address a = new Address(address1, address2, city, state, zipCode);
+
+                int check = Employee.create(SSN, firstName, middleInitial, lastName, dob, gender, phone, j, a);
+                if (check == 1)
+                {
+                    header1.success("Employee Created!");
+                }
+                else {
+                    header1.showAlert("Employee was not created because of en error!");
+                }
+                
+            
+            
+            
         }
     }
 }

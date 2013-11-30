@@ -13,6 +13,15 @@ namespace HR_SYSTEM.views {
     public partial class header {
         
         /// <summary>
+        /// UserFullNameLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label UserFullNameLabel;
+        
+        /// <summary>
         /// AlertErrorPanel control.
         /// </summary>
         /// <remarks>

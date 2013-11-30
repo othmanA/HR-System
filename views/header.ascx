@@ -19,7 +19,15 @@
          </li>
 
 
+
+         
+
+
     </ul>
+
+    <p class="navbar-text pull-right">
+              Logged in as <a href="#" class="navbar-link"><asp:Label ID="UserFullNameLabel" runat="server" Text="Label"></asp:Label></a>
+         </p>
   </div>
 </div>
 

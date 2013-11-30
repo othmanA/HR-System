@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using HR;
 namespace HR_SYSTEM.views
 {
     public partial class header : System.Web.UI.UserControl
@@ -15,6 +15,9 @@ namespace HR_SYSTEM.views
         {
             AlertErrorPanel.Visible = false;
             AlertSuccessPanel.Visible = false;
+
+            HRUser currentUser = (HRUser) Session["user"];
+            UserFullNameLabel.Text = currentUser.Name;
         }
 
         public void showAlert(string text) {

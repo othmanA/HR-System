@@ -55,10 +55,10 @@ namespace HR_SYSTEM.views
                 TableCell view = new TableCell();
 
                 // Fill The cells
-                id.Text = e.Id.ToString();
-                name.Text = e.FullName;
-                position.Text = e.Job.Position.Name;
-                view.Text = "View";
+                id.Text         = e.Id.ToString();
+                name.Text       = e.FullName;
+                position.Text   = e.Job.Position.Name;
+                view.Text       = @"<a class='btn btn-info btn-small' href=employees.aspx?id="+ e.Id +">View</a>";
 
                 // Add the cells to the row
                 row.Cells.Add(id);
@@ -66,6 +66,7 @@ namespace HR_SYSTEM.views
                 row.Cells.Add(position);
                 row.Cells.Add(view);
 
+               
                 Table1.Rows.Add(row);
             }
         }

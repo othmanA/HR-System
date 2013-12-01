@@ -13,6 +13,7 @@ namespace HR_SYSTEM.views
         {
             FillTableHeaders();
             FillEmployees();
+            
 
         }
 

@@ -31,5 +31,7 @@ namespace HR_SYSTEM.views
             AlertSuccessLabel.Text = text;
             AlertSuccessPanel.Visible = true;
         }
+
+        
     }
 }

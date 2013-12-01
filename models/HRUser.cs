@@ -13,7 +13,7 @@ namespace HR
         private string password;
         private string fullName;
         private string email;
-
+        private int role;
 
         /// <summary>
         /// Constructor
@@ -38,7 +38,7 @@ namespace HR
                 password = handler.reader["user_password"].ToString();
                 fullName = handler.reader["user_full_name"].ToString();
                 email = handler.reader["user_email"].ToString();
-                
+                role = int.Parse(handler.reader["user_role"].ToString());
             }
         }
         
@@ -118,6 +118,20 @@ namespace HR
             }
         }
 
+        public bool isAdmin() {
+            if (role == 1)
+                return true;
+            else
+                return false;
+        }
+
+        public bool isUser()
+        {
+            if (role == 0)
+                return true;
+            else
+                return false;
+        }
 
         //----- GETTERS AND SETTERS -----//
         public int ID {

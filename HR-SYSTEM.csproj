@@ -75,6 +75,7 @@
     <Content Include="views\Default.aspx" />
     <Content Include="views\EmployeeCreate.aspx" />
     <Content Include="views\Employees.aspx" />
+    <Content Include="views\EmployeeView.aspx" />
     <Content Include="views\header.ascx" />
     <Content Include="views\login.aspx" />
     <Content Include="views\Tester.aspx" />
@@ -132,6 +133,13 @@
     </Compile>
     <Compile Include="views\Employees.aspx.designer.cs">
       <DependentUpon>Employees.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\EmployeeView.aspx.cs">
+      <DependentUpon>EmployeeView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\EmployeeView.aspx.designer.cs">
+      <DependentUpon>EmployeeView.aspx</DependentUpon>
     </Compile>
     <Compile Include="views\header.ascx.cs">
       <DependentUpon>header.ascx</DependentUpon>

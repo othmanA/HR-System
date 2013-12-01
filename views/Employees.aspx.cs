@@ -67,7 +67,7 @@ namespace HR_SYSTEM.views
                 name.Text       = e.FullName;
                 department.Text = e.Job.Position.Department.Name;
                 position.Text   = e.Job.Position.Name;
-                view.Text       = @"<a class='btn btn-info btn-small' href=employees.aspx?id="+ e.Id +">View</a>";
+                view.Text       = @"<a class='btn btn-info btn-small' href=EmployeeView.aspx?id="+ e.Id +">View</a>";
 
                 // Add the cells to the row
                 row.Cells.Add(id);

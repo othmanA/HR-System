@@ -32,6 +32,7 @@ namespace HR
                     this.name = handler.reader["position_name"].ToString();
                     int dep_id = int.Parse(handler.reader["position_department"].ToString());
                     Department d = new Department(dep_id);
+                    this.department = d;
                 }
             }
         }

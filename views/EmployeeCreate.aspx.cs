@@ -12,29 +12,48 @@ namespace HR_SYSTEM.views
         protected void Page_Load(object sender, EventArgs e)
         {
             
+            
+
             // We need to fill all the dropdowns before while we load the page.
-            FillPositions();
+            FillDepartments();
             FillContractTypes();
             FillWorkingHours();
             FillWorkingStatus();
             FillGender();
+
+            // We are filling the positions only when the selected index for the department drop down is changed!
         }
 
+
+        protected void FillDepartments()
+        {
+            DepartmentDropDown.Items.Clear();
+            ArrayList l = Department.getALL();
+            foreach (Department d in l)
+            {
+                ListItem i = new ListItem(d.Name,d.ID.ToString());
+                DepartmentDropDown.Items.Add(i);
+            }
+        }
+
+
         protected void FillPositions() {
-            ArrayList l = Position.getALL();
+            ArrayList l = Position.getByDepartmentID(int.Parse(DepartmentDropDown.SelectedItem.Value));
             foreach (Position p in l) {
                 ListItem i = new ListItem(p.Name, p.ID.ToString());
                 PositionsDropDownList.Items.Add(i);
             }
         }
 
-        protected void FillContractTypes() { 
+        protected void FillContractTypes() {
+            ContractTypeDropDown.Items.Clear();
             ContractTypeDropDown.Items.Add("Full-Time");
             ContractTypeDropDown.Items.Add("Part-Time");
         }
 
         protected void FillGender()
         {
+            GenderDropDown.Items.Clear();
             GenderDropDown.Items.Add("Male");
             GenderDropDown.Items.Add("Female");
         }
@@ -48,6 +67,7 @@ namespace HR_SYSTEM.views
 
         protected void FillWorkingStatus()
         {
+            WorkingStatusDropDown.Items.Clear();
             WorkingStatusDropDown.Items.Add("Working");
             WorkingStatusDropDown.Items.Add("Not Working");
         }
@@ -98,6 +118,11 @@ namespace HR_SYSTEM.views
             
             
             
+        }
+
+        protected void DepartmentDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FillPositions();
         }
     }
 }

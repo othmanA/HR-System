@@ -59,5 +59,13 @@ namespace HR
             
             return handler.ExecuteNonQuery();
         }
+
+        public string Name {
+            get { return name; }
+        }
+
+        public int ID {
+            get { return id; }
+        }
     }
 }

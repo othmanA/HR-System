@@ -72,5 +72,30 @@ namespace HR
 
             return list;
         }
+
+
+        /// <summary>
+        /// This will return an arraylist that contains the name and id and the department for each 
+        /// </summary>
+        /// <returns></returns>
+        public static ArrayList getByDepartmentID(int department_id)
+        {
+            ArrayList list = new ArrayList();
+
+            DatabaseHandler handler = new DatabaseHandler();
+            handler.setSQL("SELECT * FROM Position WHERE position_department = @id");
+            handler.addParameter("@id", department_id.ToString());
+            handler.queryExecute();
+            while (handler.reader.Read())
+            {
+
+                int id = int.Parse(handler.reader["position_id"].ToString());
+                string name = handler.reader["position_name"].ToString();
+                Position p = new Position(id, name, new Department(department_id));
+                list.Add(p);
+            }
+
+            return list;
+        }
     }
 }

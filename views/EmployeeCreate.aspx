@@ -145,6 +145,15 @@
 		</tr>
 
         <tr>
+			<td>Department</td>
+			<td>
+                <asp:DropDownList ID="DepartmentDropDown" runat="server" AutoPostBack="True" 
+                    onselectedindexchanged="DepartmentDropDown_SelectedIndexChanged">
+                </asp:DropDownList>
+            </td>
+		</tr>
+
+        <tr>
 			<td>Position:</td>
 			<td>
                 <asp:DropDownList ID="PositionsDropDownList" runat="server">

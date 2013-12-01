@@ -102,7 +102,12 @@ namespace HR
 
 
             // Preparing the variables for the Job constructor
-            bool workingStatus = bool.Parse(r["employee_working_status"].ToString());
+            bool workingStatus = true;
+
+            string workingStatusAsString = r["employee_working_status"].ToString();
+            if (workingStatusAsString == "0")
+                workingStatus = false;
+
             string contract = r["employee_contract"].ToString();
             int hoursPerDay = int.Parse(r["employee_hoursPerDay"].ToString());
             DateTime firstDay = DateTime.Parse(r["employee_firstDay"].ToString());
@@ -319,6 +324,16 @@ namespace HR
         {
             get { return income; }
             private set { income = value; }
+        }
+
+
+        // TO get the full name Directly
+        public string FullName {
+            get {
+               string name; 
+               name = this.firstName + " " + this.middleInitial.ToString() + ". " + this.lastName;
+               return name;
+            }
         }
     }
 }

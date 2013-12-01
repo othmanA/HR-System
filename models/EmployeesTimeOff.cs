@@ -33,7 +33,7 @@ namespace HR
 
             while (handler.reader.Read())
             {
-                int id = int.Parse(handler.reader["time_off"].ToString());
+                int id = int.Parse(handler.reader["time_off_id"].ToString());
                 DateTime startDate = DateTime.Parse(handler.reader["time_off_start_date"].ToString());
                 DateTime endDate = DateTime.Parse(handler.reader["time_off_end_date"].ToString());
                 string type = handler.reader["time_off_type"].ToString();

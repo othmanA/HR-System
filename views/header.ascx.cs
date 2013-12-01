@@ -15,7 +15,9 @@ namespace HR_SYSTEM.views
         {
             AlertErrorPanel.Visible = false;
             AlertSuccessPanel.Visible = false;
-
+            if (Session["user"] == null) {
+                Response.Redirect("Login.aspx");
+            }
             HRUser currentUser = (HRUser) Session["user"];
             UserFullNameLabel.Text = currentUser.Name;
         }

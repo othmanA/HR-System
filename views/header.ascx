@@ -14,6 +14,7 @@
         <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Employees <b class="caret"></b></a>
                   <ul class="dropdown-menu">
+                    <li><a href="Employees.aspx"><i class="icon-user"></i> Employees</a></li>
                     <li><a href="EmployeeCreate.aspx"><i class="icon-plus"></i> Create a New Employee</a></li>
                   </ul>
          </li>

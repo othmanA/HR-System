@@ -30,21 +30,22 @@
     </div>
 
     <div class="well">
-    <h3>Employee Personal Information</h3>
+    <h5>Employee Personal Information</h5>
     
 
     <asp:Table ID="InformationTable" runat="server">
         </asp:Table>
+        </div><div class="well">
 
-        <hr />
-        <h3>Job Information:</h3>
+        <h5>Job Information:</h5>
         
 
         <asp:Table ID="JobTable" runat="server">
         </asp:Table>
+        </div>
+        <div class="well">
 
-        <hr />
-        <h3>Contact Information:</h3>
+        <h5>Contact Information:</h5>
        
 
         <asp:Table ID="AddressTable" runat="server">
@@ -53,7 +54,7 @@
 
 
         <div class="well">
-    <h3>Employee Records</h3>
+    <h5>Employee Records</h5>
     
 
     <asp:Table ID="RecordsTable" runat="server">
@@ -61,7 +62,7 @@
     </div>
 
      <div class="well">
-    <h3>Employee Income</h3>
+    <h5>Employee Income</h5>
  
 
     <asp:Table ID="IncomeTable" runat="server">
@@ -69,7 +70,7 @@
     </div>
 
         <div class="well">
-    <h3>Employee Time Off</h3>
+    <h5>Employee Time Off</h5>
   
 
     <asp:Table ID="TimeOffTable" runat="server">
@@ -78,7 +79,7 @@
 
 
         <div class="well">
-    <h3>Employee Documents</h3>
+    <h5>Employee Documents</h5>
    
 
     <asp:Table ID="DocumentsTable" runat="server">

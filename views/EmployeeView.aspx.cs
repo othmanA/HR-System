@@ -27,6 +27,7 @@ namespace HR_SYSTEM.views
             fillButtons();
             fillInformation();
             fillJob();
+            fillContact();
 
         }
 
@@ -57,7 +58,7 @@ namespace HR_SYSTEM.views
             ButtonsTable.Rows.Add(row);
 
             // Add the bootstrap table class to the table
-            ButtonsTable.CssClass = "table centerTD";
+            ButtonsTable.CssClass = "table centerTD no-border-table";
         }
 
         protected void fillInformation() { 
@@ -172,7 +173,62 @@ namespace HR_SYSTEM.views
             JobTable.CssClass = "table";
 
 
-        } 
+
+
+        }
+
+        protected void fillContact() {
+            TableRow headerRow = new TableRow();
+            TableRow valuesRow = new TableRow();
+
+            TableHeaderCell address1Header = new TableHeaderCell();
+            TableHeaderCell address2Header = new TableHeaderCell();
+            TableHeaderCell cityHeader = new TableHeaderCell();
+            TableHeaderCell stateHeader = new TableHeaderCell();
+            TableHeaderCell zipHeader = new TableHeaderCell();
+            TableHeaderCell phoneHeader = new TableHeaderCell();
+
+            TableCell address1 = new TableCell();
+            TableCell address2 = new TableCell();
+            TableCell city = new TableCell();
+            TableCell status = new TableCell();
+            TableCell zipcode = new TableCell();
+            TableCell phone = new TableCell();
+
+            address1Header.Text = "Address 1".ToUpper();
+            address2Header.Text = "Address 2".ToUpper();
+            cityHeader.Text = "City".ToUpper();
+            stateHeader.Text = "State".ToUpper();
+            zipHeader.Text = "Zip Code".ToUpper();
+            phoneHeader.Text = "Phone".ToUpper();
+
+            address1.Text = employee.Address.Address1;
+            address2.Text = employee.Address.Address2;
+            city.Text = employee.Address.City;
+            status.Text = employee.Address.State;
+            zipcode.Text = employee.Address.ZipCode.ToString();
+            phone.Text = employee.Phone;
+
+            headerRow.Cells.Add(address1Header);
+            headerRow.Cells.Add(address2Header);
+            headerRow.Cells.Add(cityHeader);
+            headerRow.Cells.Add(stateHeader);
+            headerRow.Cells.Add(zipHeader);
+            headerRow.Cells.Add(phoneHeader);
+
+
+            valuesRow.Cells.Add(address1);
+            valuesRow.Cells.Add(address2);
+            valuesRow.Cells.Add(city);
+            valuesRow.Cells.Add(status);
+            valuesRow.Cells.Add(zipcode);
+            valuesRow.Cells.Add(phone);
+
+            AddressTable.Rows.Add(headerRow);
+            AddressTable.Rows.Add(valuesRow);
+
+            AddressTable.CssClass = "table";
+        }
 
         protected void fillRecords() { 
         

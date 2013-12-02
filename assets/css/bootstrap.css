@@ -989,8 +989,19 @@ button.close{padding:0;cursor:pointer;background:transparent;border:0;-webkit-ap
     text-align:center;
        
 }
-.table th{border:0px;}
+
 
 
 .well{background-color:#ffffff;border-raduis:0px;}
 body{background-color:#f2f2f2;}
+
+.well h5
+{
+    text-align:center;
+    color: Navy;
+    }
+    
+.no-border-table td, .no-border-table th, .no-border-table
+{
+    border: 0px;
+    }

@@ -986,9 +986,13 @@ button.close{padding:0;cursor:pointer;background:transparent;border:0;-webkit-ap
 {
     font-family: Tahoma;
     font-size: 13px; 
-    text-align:center;
        
 }
+
+.centerTD
+{
+    text-align:center;
+    }
 
 
 

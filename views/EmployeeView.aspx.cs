@@ -43,10 +43,10 @@ namespace HR_SYSTEM.views
             TableHeaderCell addDocumentCell = new TableHeaderCell();
 
             // Add the links to cells Text
-            addRecordsCell.Text = @"<a class='btn btn-warning' href='EmployeeAddRecord.aspx?id='"+employee.Id+">Add a Record</a>";
-            addTimeOffCell.Text = @"<a class='btn btn-warning' href='EmployeeAddTimeOff.aspx?id='" + employee.Id + ">Add a Time Off</a>";
-            addIncomeCell.Text = @"<a class='btn btn-warning' href='EmployeeAddIncome.aspx?id='" + employee.Id + ">Add an Income</a>";
-            addDocumentCell.Text = @"<a class='btn btn-warning' href='EmployeeAddDocument.aspx?id='" + employee.Id + ">Add a Document</a>";
+            addRecordsCell.Text = @"<a class='btn btn-warning' href='EmployeeAddRecord.aspx?id="+employee.Id+"'>Add a Record</a>";
+            addTimeOffCell.Text = @"<a class='btn btn-warning' href='EmployeeAddTimeOff.aspx?id=" + employee.Id + "'>Add a Time Off</a>";
+            addIncomeCell.Text = @"<a class='btn btn-warning' href='EmployeeAddIncome.aspx?id=" + employee.Id + "'>Add an Income</a>";
+            addDocumentCell.Text = @"<a class='btn btn-warning' href='EmployeeAddDocument.aspx?id=" + employee.Id + "'>Add a Document</a>";
 
             // Add the cells to the row
             row.Cells.Add(addRecordsCell);

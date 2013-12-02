@@ -74,6 +74,7 @@
     <Content Include="Default.aspx" />
     <Content Include="views\Default.aspx" />
     <Content Include="views\EmployeeAddRecord.aspx" />
+    <Content Include="views\EmployeeAddTimeOff.aspx" />
     <Content Include="views\EmployeeCreate.aspx" />
     <Content Include="views\Employees.aspx" />
     <Content Include="views\EmployeeView.aspx" />
@@ -127,6 +128,13 @@
     </Compile>
     <Compile Include="views\EmployeeAddRecord.aspx.designer.cs">
       <DependentUpon>EmployeeAddRecord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\EmployeeAddTimeOff.aspx.cs">
+      <DependentUpon>EmployeeAddTimeOff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\EmployeeAddTimeOff.aspx.designer.cs">
+      <DependentUpon>EmployeeAddTimeOff.aspx</DependentUpon>
     </Compile>
     <Compile Include="views\EmployeeCreate.aspx.cs">
       <DependentUpon>EmployeeCreate.aspx</DependentUpon>

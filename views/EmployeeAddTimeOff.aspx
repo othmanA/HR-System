@@ -1,51 +1,51 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EmployeeAddRecord.aspx.cs" Inherits="HR_SYSTEM.views.EmployeeAddRecord" %>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EmployeeAddTimeOff.aspx.cs" Inherits="HR_SYSTEM.views.EmployeeAddTimeOff" %>
 <%@ Register src="header.ascx" tagname="header" tagprefix="uc1" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
+<form id="form1" runat="server">
     <div>
     
         <uc1:header ID="header1" runat="server" />
         
         <div class="container">
         <div class="well">
-            <h3>Create A Record
+            <h3>Add Time-Off
             </h3>
 
             <table class="table" style="border:0">
 		<tr>
-			<td>Number: </td>
+			<td>Start Date: </td>
             <td>
-                <asp:TextBox ID="NumberTextBox" runat="server"></asp:TextBox>
+                <asp:TextBox ID="StartText" runat="server"></asp:TextBox>
             </td>
 		</tr>
 
 		<tr>
-			<td>Issue Date: </td>
+			<td>End Date: </td>
             <td>
-                <asp:TextBox ID="IssueDateText" runat="server"></asp:TextBox>
+                <asp:TextBox ID="EndDateText" runat="server"></asp:TextBox>
             </td>
 		</tr>
 
         
 
 		<tr>
-			<td>Expire Date: </td>
+			<td>Paid Days: </td>
             <td>
-                <asp:TextBox ID="ExpireDateText" runat="server"></asp:TextBox>
+                <asp:TextBox ID="PaidText" runat="server"></asp:TextBox>
             </td>
 		</tr>
 
         <script>
-            $("#IssueDateText").datepicker({ changeYear: true, changeMonth: true });
-            $("#ExpireDateText").datepicker({ changeYear: true, changeMonth: true });
+            $("#StartText").datepicker({ changeYear: true, changeMonth: true });
+            $("#EndDateText").datepicker({ changeYear: true, changeMonth: true });
                 </script>
 
 		<tr>
@@ -53,13 +53,6 @@
             <td>
                 <asp:DropDownList ID="TypeDropDown" runat="server">
                 </asp:DropDownList>
-            </td>
-		</tr>
-
-		<tr>
-			<td>Notes: </td>
-            <td>
-                <asp:TextBox ID="NotesTextBox" runat="server"></asp:TextBox>
             </td>
 		</tr>
 

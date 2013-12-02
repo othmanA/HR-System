@@ -23,12 +23,13 @@ namespace HR_SYSTEM.views
                 Response.Redirect("Employees.aspx");
             }
 
-            // We need to fill all table when the page load
+            // We need to fill all tables when the page is loaded
             fillButtons();
             fillInformation();
             fillJob();
             fillContact();
             fillRecords();
+            fillTimeOff();
         }
 
         protected void fillButtons() {
@@ -287,8 +288,64 @@ namespace HR_SYSTEM.views
         
         }
 
-        protected void fillTimeOff() { 
-        
+        protected void fillTimeOff() {
+            ArrayList timeoff = new ArrayList();
+            timeoff = employee.TimeOff.getALL();
+
+            TableRow headerRow = new TableRow();
+            TableRow valuesRow = new TableRow();
+
+            TableHeaderCell startDateHeader = new TableHeaderCell();
+            TableHeaderCell endDateHeader = new TableHeaderCell();
+            TableHeaderCell paidDaysHeader = new TableHeaderCell();
+            TableHeaderCell unPaidDaysHeader = new TableHeaderCell();
+            TableHeaderCell TotalHeader = new TableHeaderCell();
+            TableHeaderCell TypeHeader = new TableHeaderCell();
+
+            TableCell startDate = new TableCell();
+            TableCell endDate = new TableCell();
+            TableCell paidDays = new TableCell();
+            TableCell unPaidDays = new TableCell();
+            TableCell Total = new TableCell();
+            TableCell timeofftype = new TableCell();
+
+            startDateHeader.Text = "Start date".ToUpper();
+            endDateHeader.Text = "end date".ToUpper();
+            paidDaysHeader.Text = "paid days".ToUpper();
+            unPaidDaysHeader.Text = "un paid days".ToUpper();
+            TotalHeader.Text = "total days".ToUpper();
+            TypeHeader.Text = "Type".ToUpper();
+
+            headerRow.Cells.Add(startDateHeader);
+            headerRow.Cells.Add(endDateHeader);
+            headerRow.Cells.Add(paidDaysHeader);
+            headerRow.Cells.Add(unPaidDaysHeader);
+            headerRow.Cells.Add(TotalHeader);
+            headerRow.Cells.Add(TypeHeader);
+
+            TimeOffTable.Rows.Add(headerRow);
+
+
+            foreach (TimeOff t in timeoff)
+            {
+                startDate.Text = t.StartDate.ToShortDateString();
+                endDate.Text = t.EndDate.ToShortDateString();
+                paidDays.Text = t.PaidDays.ToString();
+                unPaidDays.Text = t.UnPaidDays.ToString();
+                Total.Text = t.TotalDays.ToString();
+                timeofftype.Text = t.Type;
+
+                valuesRow.Cells.Add(startDate);
+                valuesRow.Cells.Add(endDate);
+                valuesRow.Cells.Add(paidDays);
+                valuesRow.Cells.Add(unPaidDays);
+                valuesRow.Cells.Add(Total);
+                valuesRow.Cells.Add(timeofftype);
+
+                TimeOffTable.Rows.Add(valuesRow);
+            }
+
+            TimeOffTable.CssClass = "table";
         }
 
         protected void fillDocuments() { 

@@ -26,6 +26,7 @@ namespace HR_SYSTEM.views
             // We need to fill all table when the page load
             fillButtons();
             fillInformation();
+            fillJob();
 
         }
 
@@ -94,7 +95,7 @@ namespace HR_SYSTEM.views
             //Add the variables to the cells
             nameCell.Text = employee.FullName;
             ssnCell.Text = employee.SSN;
-            dobCell.Text = employee.Dob.Date.ToString();
+            dobCell.Text = employee.Dob.ToShortDateString();
             genderCell.Text = employee.Gender.ToString();
 
             // Add the headers to the row
@@ -117,6 +118,61 @@ namespace HR_SYSTEM.views
             InformationTable.CssClass = "table centerTD";
 
         }
+
+        protected void fillJob() {
+            TableRow headerRow = new TableRow();
+            TableRow valuesRow = new TableRow();
+
+            TableHeaderCell jobDepartmentHeader = new TableHeaderCell();
+            TableHeaderCell jobPositionHeader = new TableHeaderCell();
+            TableHeaderCell jobWorkingHoursHeader = new TableHeaderCell();
+            TableHeaderCell jobWorkingStatusHeader = new TableHeaderCell();
+            TableHeaderCell jobContractHeader = new TableHeaderCell();
+            TableHeaderCell jobFirstDayHeader = new TableHeaderCell();
+
+            TableCell department = new TableCell();
+            TableCell position = new TableCell();
+            TableCell workingHours = new TableCell();
+            TableCell status = new TableCell();
+            TableCell contract = new TableCell();
+            TableCell firstDay = new TableCell();
+
+            jobDepartmentHeader.Text = "Department".ToUpper();
+            jobPositionHeader.Text = "Position".ToUpper();
+            jobWorkingHoursHeader.Text = "Working Hours".ToUpper();
+            jobWorkingStatusHeader.Text = "Status".ToUpper();
+            jobContractHeader.Text = "Contract".ToUpper();
+            jobFirstDayHeader.Text = "FirstDay".ToUpper();
+
+            department.Text = employee.Job.Position.Department.Name;
+            position.Text = employee.Job.Position.Name;
+            workingHours.Text = employee.Job.HoursPerDay.ToString();
+            status.Text = employee.Job.WorkingStatus.ToString();
+            contract.Text = employee.Job.Contract.ToString();
+            firstDay.Text = employee.Job.FirstDayAtWork.ToShortDateString();
+
+            headerRow.Cells.Add(jobDepartmentHeader);
+            headerRow.Cells.Add(jobPositionHeader);
+            headerRow.Cells.Add(jobWorkingHoursHeader);
+            headerRow.Cells.Add(jobWorkingStatusHeader);
+            headerRow.Cells.Add(jobContractHeader);
+            headerRow.Cells.Add(jobFirstDayHeader);
+
+
+            valuesRow.Cells.Add(department);
+            valuesRow.Cells.Add(position);
+            valuesRow.Cells.Add(workingHours);
+            valuesRow.Cells.Add(status);
+            valuesRow.Cells.Add(contract);
+            valuesRow.Cells.Add(firstDay);
+
+            JobTable.Rows.Add(headerRow);
+            JobTable.Rows.Add(valuesRow);
+
+            JobTable.CssClass = "table";
+
+
+        } 
 
         protected void fillRecords() { 
         

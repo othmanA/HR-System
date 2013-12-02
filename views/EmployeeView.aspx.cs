@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -28,7 +28,7 @@ namespace HR_SYSTEM.views
             fillInformation();
             fillJob();
             fillContact();
-
+            fillRecords();
         }
 
         protected void fillButtons() {
@@ -230,8 +230,57 @@ namespace HR_SYSTEM.views
             AddressTable.CssClass = "table";
         }
 
-        protected void fillRecords() { 
-        
+        protected void fillRecords() {
+            ArrayList records = new ArrayList();
+            records = employee.Records.getALL();
+
+            TableRow headerRow = new TableRow();
+            TableRow valuesRow = new TableRow();
+
+            TableHeaderCell NumberHeader = new TableHeaderCell();
+            TableHeaderCell issueHeader = new TableHeaderCell();
+            TableHeaderCell expireHeader = new TableHeaderCell();
+            TableHeaderCell typeHeader = new TableHeaderCell();
+            TableHeaderCell noteHeader = new TableHeaderCell();
+
+            TableCell number = new TableCell();
+            TableCell issueDate = new TableCell();
+            TableCell expireDate = new TableCell();
+            TableCell type = new TableCell();
+            TableCell note = new TableCell();
+
+            NumberHeader.Text = "Number".ToUpper();
+            issueHeader.Text = "Issue date".ToUpper();
+            expireHeader.Text = "Expire date".ToUpper();
+            typeHeader.Text = "type date".ToUpper();
+            noteHeader.Text = "note date".ToUpper();
+
+            headerRow.Cells.Add(NumberHeader);
+            headerRow.Cells.Add(issueHeader);
+            headerRow.Cells.Add(expireHeader);
+            headerRow.Cells.Add(typeHeader);
+            headerRow.Cells.Add(noteHeader);
+
+            RecordsTable.Rows.Add(headerRow);
+
+
+            foreach (Record r in records) {
+                number.Text = r.Number.ToString();
+                issueDate.Text = r.IssueDate.ToShortDateString();
+                expireDate.Text = r.ExpireDate.ToShortDateString();
+                type.Text = r.Type;
+                note.Text = r.Note;
+
+                valuesRow.Cells.Add(number);
+                valuesRow.Cells.Add(issueDate);
+                valuesRow.Cells.Add(expireDate);
+                valuesRow.Cells.Add(type);
+                valuesRow.Cells.Add(note);
+
+                RecordsTable.Rows.Add(valuesRow);
+            }
+
+            RecordsTable.CssClass = "table";
         }
 
         protected void fillIncome() { 

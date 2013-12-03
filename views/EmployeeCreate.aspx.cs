@@ -15,7 +15,8 @@ namespace HR_SYSTEM.views
             
 
             // We need to fill all the dropdowns before while we load the page.
-            FillDepartments();
+            if(!Page.IsPostBack)
+                FillDepartments();
             FillContractTypes();
             FillWorkingHours();
             FillWorkingStatus();

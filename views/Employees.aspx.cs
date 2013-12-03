@@ -49,7 +49,7 @@ namespace HR_SYSTEM.views
         protected void FillEmployees() { 
             EmployeesCollection employeesCollectionHandler = new EmployeesCollection();
             ArrayList employees = employeesCollectionHandler.getALL();
-
+            Label1.Text = employees.Count.ToString();
             // Declare the cells here so we don't use the word NEW for each employee
             TableRow row = new TableRow();
             TableCell id = new TableCell();
@@ -57,6 +57,8 @@ namespace HR_SYSTEM.views
             TableCell department = new TableCell();
             TableCell position = new TableCell();
             TableCell view = new TableCell();
+
+            
 
             foreach(Employee e in employees){
                 // Creating the objects that we are going to fill in the Table

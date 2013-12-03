@@ -73,6 +73,7 @@
     <Content Include="assets\js\jquery.js" />
     <Content Include="Default.aspx" />
     <Content Include="views\Default.aspx" />
+    <Content Include="views\EmployeeAddDocument.aspx" />
     <Content Include="views\EmployeeAddIncome.aspx" />
     <Content Include="views\EmployeeAddRecord.aspx" />
     <Content Include="views\EmployeeAddTimeOff.aspx" />
@@ -122,6 +123,13 @@
     </Compile>
     <Compile Include="views\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\EmployeeAddDocument.aspx.cs">
+      <DependentUpon>EmployeeAddDocument.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\EmployeeAddDocument.aspx.designer.cs">
+      <DependentUpon>EmployeeAddDocument.aspx</DependentUpon>
     </Compile>
     <Compile Include="views\EmployeeAddIncome.aspx.cs">
       <DependentUpon>EmployeeAddIncome.aspx</DependentUpon>
@@ -189,6 +197,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\img\" />
+    <Folder Include="upload\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

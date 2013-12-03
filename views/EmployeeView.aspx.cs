@@ -46,10 +46,12 @@ namespace HR_SYSTEM.views
             TableHeaderCell addDocumentCell = new TableHeaderCell();
 
             // Add the links to cells Text
-            addRecordsCell.Text = @"<a class='btn btn-warning' href='EmployeeAddRecord.aspx?id="+employee.Id+"'>Add a Record</a>";
-            addTimeOffCell.Text = @"<a class='btn btn-warning' href='EmployeeAddTimeOff.aspx?id=" + employee.Id + "'>Add a Time Off</a>";
-            addIncomeCell.Text = @"<a class='btn btn-warning' href='EmployeeAddIncome.aspx?id=" + employee.Id + "'>Add an Income</a>";
-            addDocumentCell.Text = @"<a class='btn btn-warning' href='EmployeeAddDocument.aspx?id=" + employee.Id + "'>Add a Document</a>";
+            addRecordsCell.Text = @"<a class='btn btn-warning btn-employee' href='EmployeeAddRecord.aspx?id="+employee.Id+"'><i class='icon-pencil icon-white'></i> Add a Record</a>";
+            addTimeOffCell.Text = @"<a class='btn btn-warning btn-employee' href='EmployeeAddTimeOff.aspx?id=" + employee.Id + "'><i class='icon-calendar icon-white'></i> Add a Time Off</a>";
+            addIncomeCell.Text = @"<a class='btn btn-warning btn-employee' href='EmployeeAddIncome.aspx?id=" + employee.Id + "'><i class='icon-plus icon-white'></i> Add an Income</a>";
+            addDocumentCell.Text = @"<a class='btn btn-warning btn-employee' href='EmployeeAddDocument.aspx?id=" + employee.Id + "'><i class='icon-folder-open icon-white'></i> Add a Document</a>";
+
+            
 
             // Add the cells to the row
             row.Cells.Add(addRecordsCell);
@@ -61,7 +63,7 @@ namespace HR_SYSTEM.views
             ButtonsTable.Rows.Add(row);
 
             // Add the bootstrap table class to the table
-            ButtonsTable.CssClass = "table centerTD no-border-table";
+            ButtonsTable.CssClass = "table centerTD no-border-table buttons-table";
         }
 
         protected void fillInformation() { 
@@ -427,7 +429,6 @@ namespace HR_SYSTEM.views
 
                 name.Text = d.Name;
                 download.Text = "<a href='C:\\\\upload\\" + d.Path + "'>Download</a>";
-
 
                 valuesRow.Cells.Add(name);
                 valuesRow.Cells.Add(download);

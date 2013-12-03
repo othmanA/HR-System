@@ -18,8 +18,8 @@
     <div class="well">
     
     
-        <asp:Table ID="ButtonsTable" runat="server">
-        </asp:Table>
+        <center><asp:Table ID="ButtonsTable" runat="server">
+        </asp:Table></center>
         
         
         

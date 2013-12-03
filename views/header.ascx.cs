@@ -20,6 +20,8 @@ namespace HR_SYSTEM.views
             }
             HRUser currentUser = (HRUser) Session["user"];
             UserFullNameLabel.Text = currentUser.Name;
+
+            
         }
 
         public void showAlert(string text) {

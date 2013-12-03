@@ -1009,3 +1009,19 @@ body{background-color:#f2f2f2;}
 {
     border: 0px;
     }
+    
+ 
+ 
+ .nav li a
+ {
+     font-family: Tahoma;
+     font-size: 13px;
+     }
+     
+     .btn-employee
+     {
+         font-family:Tahoma;
+         font-size: 13px;
+         }
+         
+         .buttons-table td, .buttons-table, .buttons-table th{text-align:center;}

@@ -61,6 +61,7 @@ namespace HR_SYSTEM.views
 
         protected void FillWorkingHours()
         {
+            WorkingHoursDropDown.Items.Clear();
             for (int i = 1; i <= 12; i++) {
                 WorkingHoursDropDown.Items.Add(i.ToString());
             }

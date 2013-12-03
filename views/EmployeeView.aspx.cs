@@ -31,6 +31,7 @@ namespace HR_SYSTEM.views
             fillRecords();
             fillTimeOff();
             fillIncome();
+            fillDocuments();
         }
 
         protected void fillButtons() {
@@ -398,8 +399,43 @@ namespace HR_SYSTEM.views
             TimeOffTable.CssClass = "table";
         }
 
-        protected void fillDocuments() { 
-        
+        protected void fillDocuments() {
+            ArrayList docs = new ArrayList();
+            docs = employee.Documents.getALL();
+
+            TableRow headerRow = new TableRow();
+
+
+            TableHeaderCell nameHeader = new TableHeaderCell();
+            TableHeaderCell downloadHeader = new TableHeaderCell();
+
+            nameHeader.Text = "Document Name".ToUpper();
+            downloadHeader.Text = "Download".ToUpper();
+
+            headerRow.Cells.Add(nameHeader);
+            headerRow.Cells.Add(downloadHeader);
+
+
+            DocumentsTable.Rows.Add(headerRow);
+
+            foreach (Document d in docs)
+            {
+                TableRow valuesRow = new TableRow();
+
+                TableCell name = new TableCell();
+                TableCell download = new TableCell();
+
+                name.Text = d.Name;
+                download.Text = "<a href='C:\\\\upload\\" + d.Path + "'>Download</a>";
+
+
+                valuesRow.Cells.Add(name);
+                valuesRow.Cells.Add(download);
+
+                DocumentsTable.Rows.Add(valuesRow);
+            }
+
+            DocumentsTable.CssClass = "table";
         }
     }
 }

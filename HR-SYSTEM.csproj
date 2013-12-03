@@ -73,6 +73,7 @@
     <Content Include="assets\js\jquery.js" />
     <Content Include="Default.aspx" />
     <Content Include="views\Default.aspx" />
+    <Content Include="views\EmployeeAddIncome.aspx" />
     <Content Include="views\EmployeeAddRecord.aspx" />
     <Content Include="views\EmployeeAddTimeOff.aspx" />
     <Content Include="views\EmployeeCreate.aspx" />
@@ -121,6 +122,13 @@
     </Compile>
     <Compile Include="views\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\EmployeeAddIncome.aspx.cs">
+      <DependentUpon>EmployeeAddIncome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\EmployeeAddIncome.aspx.designer.cs">
+      <DependentUpon>EmployeeAddIncome.aspx</DependentUpon>
     </Compile>
     <Compile Include="views\EmployeeAddRecord.aspx.cs">
       <DependentUpon>EmployeeAddRecord.aspx</DependentUpon>

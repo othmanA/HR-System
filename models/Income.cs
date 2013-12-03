@@ -24,8 +24,8 @@ namespace HR
             handler.setSQL("INSERT INTO Income (employee, income_type, income_amount, income_per) VALUES (@employee_id,@type,@amount,@per)");
 
             handler.addParameter("@employee_id", employee_id.ToString());
-            handler.addParameter("@type", amount.ToString());
-            handler.addParameter("@amount", type);
+            handler.addParameter("@type", type);
+            handler.addParameter("@amount", amount.ToString());
             handler.addParameter("@per", per);
 
 

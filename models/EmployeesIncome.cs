@@ -22,7 +22,7 @@ namespace HR
         public void init(int employee_id)
         {
             DatabaseHandler handler = new DatabaseHandler();
-            handler.setSQL("SELECT * FROM Income WHERE income_id = @employee_id");
+            handler.setSQL("SELECT * FROM Income WHERE employee = @employee_id");
             handler.addParameter("@employee_id", employee_id.ToString());
             handler.queryExecute();
 

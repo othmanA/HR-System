@@ -30,6 +30,7 @@ namespace HR_SYSTEM.views
             fillContact();
             fillRecords();
             fillTimeOff();
+            fillIncome();
         }
 
         protected void fillButtons() {
@@ -236,7 +237,7 @@ namespace HR_SYSTEM.views
             records = employee.Records.getALL();
 
             TableRow headerRow = new TableRow();
-            TableRow valuesRow = new TableRow();
+            
 
             TableHeaderCell NumberHeader = new TableHeaderCell();
             TableHeaderCell issueHeader = new TableHeaderCell();
@@ -244,11 +245,7 @@ namespace HR_SYSTEM.views
             TableHeaderCell typeHeader = new TableHeaderCell();
             TableHeaderCell noteHeader = new TableHeaderCell();
 
-            TableCell number = new TableCell();
-            TableCell issueDate = new TableCell();
-            TableCell expireDate = new TableCell();
-            TableCell type = new TableCell();
-            TableCell note = new TableCell();
+
 
             NumberHeader.Text = "Number".ToUpper();
             issueHeader.Text = "Issue date".ToUpper();
@@ -266,6 +263,14 @@ namespace HR_SYSTEM.views
 
 
             foreach (Record r in records) {
+                TableRow valuesRow = new TableRow();
+
+                TableCell number = new TableCell();
+                TableCell issueDate = new TableCell();
+                TableCell expireDate = new TableCell();
+                TableCell type = new TableCell();
+                TableCell note = new TableCell();
+
                 number.Text = r.Number.ToString();
                 issueDate.Text = r.IssueDate.ToShortDateString();
                 expireDate.Text = r.ExpireDate.ToShortDateString();
@@ -284,8 +289,49 @@ namespace HR_SYSTEM.views
             RecordsTable.CssClass = "table";
         }
 
-        protected void fillIncome() { 
-        
+        protected void fillIncome() {
+            ArrayList income = new ArrayList();
+            income = employee.Income.getALL();
+
+            TableRow headerRow = new TableRow();
+            
+
+            TableHeaderCell typeHeader = new TableHeaderCell();
+            TableHeaderCell amountHeader = new TableHeaderCell();
+            TableHeaderCell perHeader = new TableHeaderCell();
+
+
+
+            typeHeader.Text = "Type".ToUpper();
+            amountHeader.Text = "Amount".ToUpper();
+            perHeader.Text = "Per".ToUpper();
+
+            headerRow.Cells.Add(typeHeader);
+            headerRow.Cells.Add(amountHeader);
+            headerRow.Cells.Add(perHeader);
+
+            IncomeTable.Rows.Add(headerRow);
+
+
+            foreach (Income t in income)
+            {
+                TableRow valuesRow = new TableRow();
+                TableCell type = new TableCell();
+                TableCell amount = new TableCell();
+                TableCell per = new TableCell();
+
+                type.Text = t.Type;
+                per.Text = t.Per;
+                amount.Text = "$" + t.Amount.ToString();
+
+                valuesRow.Cells.Add(type);
+                valuesRow.Cells.Add(per);
+                valuesRow.Cells.Add(amount);
+
+                IncomeTable.Rows.Add(valuesRow);
+            }
+
+            IncomeTable.CssClass = "table";
         }
 
         protected void fillTimeOff() {
@@ -293,7 +339,7 @@ namespace HR_SYSTEM.views
             timeoff = employee.TimeOff.getALL();
 
             TableRow headerRow = new TableRow();
-            TableRow valuesRow = new TableRow();
+            
 
             TableHeaderCell startDateHeader = new TableHeaderCell();
             TableHeaderCell endDateHeader = new TableHeaderCell();
@@ -302,12 +348,7 @@ namespace HR_SYSTEM.views
             TableHeaderCell TotalHeader = new TableHeaderCell();
             TableHeaderCell TypeHeader = new TableHeaderCell();
 
-            TableCell startDate = new TableCell();
-            TableCell endDate = new TableCell();
-            TableCell paidDays = new TableCell();
-            TableCell unPaidDays = new TableCell();
-            TableCell Total = new TableCell();
-            TableCell timeofftype = new TableCell();
+
 
             startDateHeader.Text = "Start date".ToUpper();
             endDateHeader.Text = "end date".ToUpper();
@@ -328,6 +369,15 @@ namespace HR_SYSTEM.views
 
             foreach (TimeOff t in timeoff)
             {
+                TableRow valuesRow = new TableRow();
+
+                TableCell startDate = new TableCell();
+                TableCell endDate = new TableCell();
+                TableCell paidDays = new TableCell();
+                TableCell unPaidDays = new TableCell();
+                TableCell Total = new TableCell();
+                TableCell timeofftype = new TableCell();
+
                 startDate.Text = t.StartDate.ToShortDateString();
                 endDate.Text = t.EndDate.ToShortDateString();
                 paidDays.Text = t.PaidDays.ToString();

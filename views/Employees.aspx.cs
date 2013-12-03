@@ -50,11 +50,6 @@ namespace HR_SYSTEM.views
             EmployeesCollection employeesCollectionHandler = new EmployeesCollection();
             ArrayList employees = employeesCollectionHandler.getALL();
 
-            // Declare the cells here so we don't use the word NEW for each employee
-
-
-            
-
             foreach(Employee e in employees){
                 // Creating the objects that we are going to fill in the Table
                 TableRow row = new TableRow();

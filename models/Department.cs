@@ -60,6 +60,27 @@ namespace HR
             return handler.ExecuteNonQuery();
         }
 
+        public int getPositionsCount() {
+            DatabaseHandler handler = new DatabaseHandler();
+            handler.setSQL("SELECT        COUNT(position_id) AS countpositions FROM            Position WHERE        (position_department = @id)");
+            handler.addParameter("@id", this.id.ToString());
+            handler.queryExecute();
+            int count = 0;
+            while (handler.reader.Read())
+            {
+                count =  int.Parse(handler.reader["countpositions"].ToString());
+            }
+            return count;
+        }
+
+        public static int delete(int id) {
+            DatabaseHandler handler = new DatabaseHandler();
+            handler.setSQL("DELETE FROM [Department] WHERE department_id = @id");
+            handler.addParameter("@id", id.ToString());
+     
+            return handler.ExecuteNonQuery();
+        }
+
         public string Name {
             get { return name; }
         }

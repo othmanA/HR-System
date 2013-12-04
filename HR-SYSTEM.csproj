@@ -73,6 +73,7 @@
     <Content Include="assets\js\jquery.js" />
     <Content Include="Default.aspx" />
     <Content Include="views\Default.aspx" />
+    <Content Include="views\deleteDepartment.aspx" />
     <Content Include="views\departments.aspx" />
     <Content Include="views\EmployeeAddDocument.aspx" />
     <Content Include="views\EmployeeAddIncome.aspx" />
@@ -124,6 +125,13 @@
     </Compile>
     <Compile Include="views\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\deleteDepartment.aspx.cs">
+      <DependentUpon>deleteDepartment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\deleteDepartment.aspx.designer.cs">
+      <DependentUpon>deleteDepartment.aspx</DependentUpon>
     </Compile>
     <Compile Include="views\departments.aspx.cs">
       <DependentUpon>departments.aspx</DependentUpon>
@@ -215,7 +223,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>63603</DevelopmentServerPort>
+          <DevelopmentServerPort>61628</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

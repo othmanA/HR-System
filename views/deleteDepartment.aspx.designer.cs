@@ -10,16 +10,7 @@
 namespace HR_SYSTEM.views {
     
     
-    public partial class departments {
-        
-        /// <summary>
-        /// Head1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
+    public partial class deleteDepartment {
         
         /// <summary>
         /// form1 control.
@@ -38,24 +29,6 @@ namespace HR_SYSTEM.views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::HR_SYSTEM.views.header header1;
-        
-        /// <summary>
-        /// Table1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table Table1;
-        
-        /// <summary>
-        /// TextBox1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
         
         /// <summary>
         /// Button1 control.

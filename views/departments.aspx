@@ -24,6 +24,30 @@
             </asp:Table>
         
         </div>
+
+        <div class="well">
+        
+        <h4>Add Department</h4>
+        <hr />
+
+        <table class="table">
+        
+        <tr><td>
+            Name: 
+        </td>
+        <td>
+            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            </td></tr>
+        <tr>
+        <td colspan=2>
+        
+            <asp:Button ID="Button1" runat="server" Text="Add" onclick="Button1_Click" />
+        
+        </td>
+        </tr>
+        </table>
+        
+        </div>
         </div>
     
     </div>

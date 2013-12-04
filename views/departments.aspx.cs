@@ -17,12 +17,14 @@ namespace HR_SYSTEM.views
             // Creating the cells
             TableHeaderCell idHeader = new TableHeaderCell();
             TableHeaderCell nameHeader = new TableHeaderCell();
+            TableHeaderCell numberOfPositionsHeader = new TableHeaderCell();
             TableHeaderCell editHeader = new TableHeaderCell();
             TableHeaderCell deleteHeader = new TableHeaderCell();
 
             // Adding the text to each cell
             idHeader.Text = "ID#";
             nameHeader.Text = "Name";
+            numberOfPositionsHeader.Text = "Number Of Positions";
             editHeader.Text = "Edit";
             deleteHeader.Text = "Delete";
 
@@ -30,6 +32,7 @@ namespace HR_SYSTEM.views
             // add the cells to the row
             headerRow.Cells.Add(idHeader);
             headerRow.Cells.Add(nameHeader);
+            headerRow.Cells.Add(numberOfPositionsHeader);
             headerRow.Cells.Add(editHeader);
             headerRow.Cells.Add(deleteHeader);
 
@@ -46,16 +49,26 @@ namespace HR_SYSTEM.views
 
                 TableCell id = new TableCell();
                 TableCell name = new TableCell();
+                TableCell numberOfPositions = new TableCell();
                 TableCell edit = new TableCell();
                 TableCell delete = new TableCell();
 
                 id.Text = d.ID.ToString();
                 name.Text = d.Name;
-                edit.Text = "Edit";
-                delete.Text = "Delete";
+
+                int numberOfPositionsCount = d.getPositionsCount();
+                numberOfPositions.Text = numberOfPositionsCount.ToString();
+
+
+                edit.Text = "<a href='editDepartment.aspx?id=" + d.ID.ToString() + "' class='btn btn-small btn-warning'>Edit</a>";
+                if (numberOfPositionsCount == 0)
+                    delete.Text = "<a href='deleteDepartment.aspx?id="+d.ID.ToString()+"' class='btn btn-small btn-danger'>Delete</a>";
+                else
+                    delete.Text = "<a href='#' disabled='disabled' class='btn btn-small btn-danger'>Department Must be Empty</a>";
 
                 row.Cells.Add(id);
                 row.Cells.Add(name);
+                row.Cells.Add(numberOfPositions);
                 row.Cells.Add(edit);
                 row.Cells.Add(delete);
 
@@ -64,6 +77,23 @@ namespace HR_SYSTEM.views
 
             Table1.CssClass = "table";
 
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            if (TextBox1.Text != null && TextBox1.Text != "") {
+                string name = TextBox1.Text;
+                int check = Department.create(name);
+
+                if (check == 1)
+                {
+                    header1.success("Department Created!");
+                }
+                else {
+                    header1.showAlert("Something went Wrong");
+                }
+            }
+                
         }
     }
 }

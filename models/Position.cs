@@ -60,7 +60,7 @@ namespace HR
             ArrayList list = new ArrayList();
 
             DatabaseHandler handler = new DatabaseHandler();
-            handler.setSQL("SELECT * FROM Position");
+            handler.setSQL("SELECT * FROM Position ORDER BY position_department");
             handler.queryExecute();
             while (handler.reader.Read()) {
 
@@ -97,6 +97,42 @@ namespace HR
             }
 
             return list;
+        }
+
+        public static int create(string position_name, int department_id)
+        {
+            DatabaseHandler handler = new DatabaseHandler();
+
+            handler.setSQL("INSERT INTO [Position] (position_name,position_department) VALUES (@name,@id)");
+            handler.addParameter("@name", position_name);
+            handler.addParameter("@id", department_id.ToString());
+
+            return handler.ExecuteNonQuery();
+        }
+
+        public int getCountOfEmployees() {
+
+            DatabaseHandler handler = new DatabaseHandler();
+            handler.setSQL("SELECT COUNT(employee_id) AS countpositions FROM            Employee WHERE        (employee_position = @id)");
+            handler.addParameter("@id", this.id.ToString());
+            handler.queryExecute();
+            int count = 0;
+            while (handler.reader.Read())
+            {
+                count = int.Parse(handler.reader["countpositions"].ToString());
+            }
+            return count;
+        }
+
+        public static int update(int positionID, string newName, int newDepartmentID) {
+            DatabaseHandler handler = new DatabaseHandler();
+            handler.setSQL("UPDATE [Position] SET position_name = @name, position_department = @department WHERE (position_id = @id)");
+
+            handler.addParameter("@id", positionID.ToString());
+            handler.addParameter("@name", newName);
+            handler.addParameter("@department", newDepartmentID.ToString());
+
+            return handler.ExecuteNonQuery();
         }
     }
 }

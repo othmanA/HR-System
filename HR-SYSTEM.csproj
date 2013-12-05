@@ -76,6 +76,7 @@
     <Content Include="views\deleteDepartment.aspx" />
     <Content Include="views\departments.aspx" />
     <Content Include="views\editDepartment.aspx" />
+    <Content Include="views\editPosition.aspx" />
     <Content Include="views\EmployeeAddDocument.aspx" />
     <Content Include="views\EmployeeAddIncome.aspx" />
     <Content Include="views\EmployeeAddRecord.aspx" />
@@ -85,6 +86,7 @@
     <Content Include="views\EmployeeView.aspx" />
     <Content Include="views\header.ascx" />
     <Content Include="views\login.aspx" />
+    <Content Include="views\positions.aspx" />
     <Content Include="views\Tester.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -148,6 +150,13 @@
     <Compile Include="views\editDepartment.aspx.designer.cs">
       <DependentUpon>editDepartment.aspx</DependentUpon>
     </Compile>
+    <Compile Include="views\editPosition.aspx.cs">
+      <DependentUpon>editPosition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\editPosition.aspx.designer.cs">
+      <DependentUpon>editPosition.aspx</DependentUpon>
+    </Compile>
     <Compile Include="views\EmployeeAddDocument.aspx.cs">
       <DependentUpon>EmployeeAddDocument.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -210,6 +219,13 @@
     </Compile>
     <Compile Include="views\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\positions.aspx.cs">
+      <DependentUpon>positions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\positions.aspx.designer.cs">
+      <DependentUpon>positions.aspx</DependentUpon>
     </Compile>
     <Compile Include="views\Tester.aspx.cs">
       <DependentUpon>Tester.aspx</DependentUpon>

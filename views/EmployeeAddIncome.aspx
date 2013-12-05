@@ -42,7 +42,8 @@
 		<tr>
 			<td>Payment Method: </td>
             <td>
-                <asp:DropDownList ID="paymentDropDown" runat="server">
+                <asp:DropDownList ID="paymentDropDown" runat="server" 
+                    onselectedindexchanged="paymentDropDown_SelectedIndexChanged">
                 </asp:DropDownList>
             </td>
 		</tr>

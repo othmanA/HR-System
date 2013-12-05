@@ -10,17 +10,20 @@ namespace HR_SYSTEM.views
     public partial class EmployeeAddIncome : System.Web.UI.Page
     {
         Employee employee = new Employee();
+        string per;
         protected void Page_Load(object sender, EventArgs e)
         {
             TypeDropDown.Items.Clear();
             TypeDropDown.Items.Add("Salary");
 
-            paymentDropDown.Items.Clear();
+            if (!Page.IsPostBack) {
+                paymentDropDown.Items.Clear();
+                ListItem mItem = new ListItem("Monthly", "Monthly");
+                ListItem aItem = new ListItem("Annually", "Annually");
+                paymentDropDown.Items.Add(mItem);
+                paymentDropDown.Items.Add(aItem);
+            }
 
-            ListItem mItem = new ListItem("Monthly", "1");
-            ListItem aItem = new ListItem("Annually", "2");
-            paymentDropDown.Items.Add(mItem);
-            paymentDropDown.Items.Add(aItem);
 
 
             // Get the id of the employee from the url and pass it to the employee object
@@ -39,7 +42,7 @@ namespace HR_SYSTEM.views
         {
             float amount = float.Parse(amountTextBox.Text);
             string type = TypeDropDown.SelectedItem.Text;
-            string per = paymentDropDown.SelectedItem.Value;
+            string per = paymentDropDown.SelectedValue;
 
             int check = Income.create(employee.Id, type, per, amount);
 
@@ -51,5 +54,11 @@ namespace HR_SYSTEM.views
                 header1.showAlert("Error");
             }
         }
+
+        protected void paymentDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

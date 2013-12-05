@@ -72,6 +72,7 @@
     <Content Include="assets\js\jquery-ui-1.10.3.custom.min.js" />
     <Content Include="assets\js\jquery.js" />
     <Content Include="Default.aspx" />
+    <Content Include="views\approveEmployee.aspx" />
     <Content Include="views\Default.aspx" />
     <Content Include="views\deleteDepartment.aspx" />
     <Content Include="views\deleteEmployee.aspx" />
@@ -125,6 +126,13 @@
     <Compile Include="models\TimeOff.cs" />
     <Compile Include="models\HRUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="views\approveEmployee.aspx.cs">
+      <DependentUpon>approveEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\approveEmployee.aspx.designer.cs">
+      <DependentUpon>approveEmployee.aspx</DependentUpon>
+    </Compile>
     <Compile Include="views\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

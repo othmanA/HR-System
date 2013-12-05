@@ -254,6 +254,14 @@ namespace HR
             return handler.ExecuteNonQuery();
         }
 
+        public static int approve(int id) {
+            DatabaseHandler handler = new DatabaseHandler();
+            handler.setSQL("UPDATE Employee SET employee_approved = 1 WHERE employee_id = @id");
+            handler.addParameter("@id", id.ToString());
+            return handler.ExecuteNonQuery();
+        }
+
+
         //----------------------- GETTERS AND SETTERS ----------------------\\
         public string FirstName {
             get { return this.firstName; }

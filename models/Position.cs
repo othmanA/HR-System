@@ -134,5 +134,14 @@ namespace HR
 
             return handler.ExecuteNonQuery();
         }
+
+        public static int delete(int id)
+        {
+            DatabaseHandler handler = new DatabaseHandler();
+            handler.setSQL("DELETE FROM [Position] WHERE position_id = @id");
+            handler.addParameter("@id", id.ToString());
+
+            return handler.ExecuteNonQuery();
+        }
     }
 }

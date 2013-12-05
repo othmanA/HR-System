@@ -108,5 +108,13 @@ namespace HR
 
         }
 
+        public void deleteALL()
+        {
+            foreach (TimeOff d in items)
+            {
+                d.delete();
+            }
+        }
+
     }
 }

@@ -1018,7 +1018,7 @@ body{background-color:#f2f2f2;}
      font-size: 13px;
      }
      
-     .btn-employee
+     .btn-employee, .navbar-text
      {
          font-family:Tahoma;
          font-size: 13px;

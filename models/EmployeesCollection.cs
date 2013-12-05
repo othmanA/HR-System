@@ -55,10 +55,12 @@ namespace HR
             return items;
         }
 
-        public ArrayList getUnApprovedEmployees(){
+        public ArrayList getApproved()
+        {
             clartItems();
             DatabaseHandler handler = new DatabaseHandler();
-            handler.setSQL("SELECT employee_id FROM Employee WHERE employee_approved = FALSE ORDER BY employee_last_name");
+            handler.setSQL("SELECT employee_id FROM Employee WHERE (employee_approved = @status) ORDER BY employee_lastName");
+            handler.addParameter("@status", "TRUE");
             handler.queryExecute();
 
             while (handler.reader.Read())
@@ -72,6 +74,28 @@ namespace HR
 
             return items;
         }
+
+        public ArrayList getUnApproved()
+        {
+            clartItems();
+            DatabaseHandler handler = new DatabaseHandler();
+            handler.setSQL("SELECT employee_id FROM Employee WHERE (employee_approved = @status) ORDER BY employee_lastName");
+            handler.addParameter("@status", "False");
+            handler.queryExecute();
+
+            while (handler.reader.Read())
+            {
+                int employee_id = int.Parse(handler.reader["employee_id"].ToString());
+                Employee e = new Employee();
+                e.findById(employee_id);
+                items.Add(e);
+            }
+
+
+            return items;
+        }
+
+        
         
     }
 }

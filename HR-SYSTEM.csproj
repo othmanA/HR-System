@@ -74,6 +74,7 @@
     <Content Include="Default.aspx" />
     <Content Include="views\Default.aspx" />
     <Content Include="views\deleteDepartment.aspx" />
+    <Content Include="views\deleteEmployee.aspx" />
     <Content Include="views\deletePosition.aspx" />
     <Content Include="views\departments.aspx" />
     <Content Include="views\editDepartment.aspx" />
@@ -87,6 +88,7 @@
     <Content Include="views\EmployeeView.aspx" />
     <Content Include="views\header.ascx" />
     <Content Include="views\login.aspx" />
+    <Content Include="views\logout.aspx" />
     <Content Include="views\positions.aspx" />
     <Content Include="views\Tester.aspx" />
     <Content Include="Web.config" />
@@ -136,6 +138,13 @@
     </Compile>
     <Compile Include="views\deleteDepartment.aspx.designer.cs">
       <DependentUpon>deleteDepartment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\deleteEmployee.aspx.cs">
+      <DependentUpon>deleteEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\deleteEmployee.aspx.designer.cs">
+      <DependentUpon>deleteEmployee.aspx</DependentUpon>
     </Compile>
     <Compile Include="views\deletePosition.aspx.cs">
       <DependentUpon>deletePosition.aspx</DependentUpon>
@@ -228,6 +237,13 @@
     <Compile Include="views\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="views\logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
     <Compile Include="views\positions.aspx.cs">
       <DependentUpon>positions.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -254,7 +270,7 @@
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
+          <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>61628</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>

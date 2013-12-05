@@ -10,7 +10,7 @@
 namespace HR_SYSTEM.views {
     
     
-    public partial class Employees {
+    public partial class deleteEmployee {
         
         /// <summary>
         /// form1 control.
@@ -31,30 +31,12 @@ namespace HR_SYSTEM.views {
         protected global::HR_SYSTEM.views.header header1;
         
         /// <summary>
-        /// panel1 control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel panel1;
-        
-        /// <summary>
-        /// Table2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table Table2;
-        
-        /// <summary>
-        /// Table1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table Table1;
+        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }

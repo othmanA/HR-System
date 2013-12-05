@@ -18,9 +18,10 @@
                     <li><a href="EmployeeCreate.aspx"><i class="icon-plus"></i> Create a New Employee</a></li>
                   </ul>
          </li>
+         <% if(admin) { %>
          <li><a href="positions.aspx"><i class="icon-certificate"></i> Positions</a></li>
          <li><a href="departments.aspx"><i class="icon-tasks"></i> Departments</a></li>
-         
+         <% } %>
          
 
          
@@ -29,8 +30,8 @@
     </ul>
 
     <p class="navbar-text pull-right">
-              Logged in as <a href="#" class="navbar-link"><asp:Label ID="UserFullNameLabel" runat="server" Text="Label"></asp:Label></a>
-         </p>
+              Logged in as <asp:Label ID="UserFullNameLabel" runat="server" Text="Label"></asp:Label><a href="logout.aspx" class="navbar-link">(Logout)</a>
+    </p>
   </div>
 </div>
 

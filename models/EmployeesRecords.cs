@@ -120,5 +120,13 @@ namespace HR
             
         }
 
+        public void deleteALL()
+        {
+            foreach (Record d in items)
+            {
+                d.delete();
+            }
+        }
+
     }
 }

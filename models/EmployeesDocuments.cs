@@ -109,5 +109,11 @@ namespace HR
 
         }
 
+        public void deleteALL() {
+            foreach (Document d in items) {
+                d.delete();
+            }
+        }
+
     }
 }

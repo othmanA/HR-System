@@ -39,6 +39,7 @@ namespace HR_SYSTEM.views
 
 
         protected void FillPositions() {
+            PositionsDropDownList.Items.Clear();
             ArrayList l = Position.getByDepartmentID(int.Parse(DepartmentDropDown.SelectedItem.Value));
             foreach (Position p in l) {
                 ListItem i = new ListItem(p.Name, p.ID.ToString());

@@ -242,6 +242,18 @@ namespace HR
             return handler.ExecuteNonQuery();
         }
 
+        public int delete() {
+            records.deleteALL();
+            timeOff.deleteALL();
+            documents.deleteALL();
+            income.deleteALL();
+
+            DatabaseHandler handler = new DatabaseHandler();
+            handler.setSQL("DELETE FROM Employee WHERE employee_id = @id");
+            handler.addParameter("@id", this.id.ToString());
+            return handler.ExecuteNonQuery();
+        }
+
         //----------------------- GETTERS AND SETTERS ----------------------\\
         public string FirstName {
             get { return this.firstName; }

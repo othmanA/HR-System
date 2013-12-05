@@ -31,6 +31,7 @@ namespace HR_SYSTEM.views
                 }
                 else {
                     Session["user"] = user;
+                    Session["admin"] = user.isAdmin().ToString();
                     Response.Redirect("Default.aspx");
                 }
 

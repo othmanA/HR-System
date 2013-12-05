@@ -9,7 +9,8 @@ namespace HR_SYSTEM.views
 {
     public partial class header : System.Web.UI.UserControl
     {
-       
+
+        protected bool admin;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,6 +22,13 @@ namespace HR_SYSTEM.views
             HRUser currentUser = (HRUser) Session["user"];
             UserFullNameLabel.Text = currentUser.Name;
 
+            if (currentUser.isAdmin())
+            {
+                admin = true;
+            }
+            else {
+                admin = false;
+            }
             
         }
 
@@ -32,6 +40,10 @@ namespace HR_SYSTEM.views
         public void success(string text) {
             AlertSuccessLabel.Text = text;
             AlertSuccessPanel.Visible = true;
+        }
+
+        public bool IsAdmin() {
+            return this.admin;
         }
 
         

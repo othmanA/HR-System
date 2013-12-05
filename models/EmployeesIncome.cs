@@ -85,5 +85,14 @@ namespace HR
 
         }
 
+
+        public void deleteALL()
+        {
+            foreach (Income d in items)
+            {
+                d.delete();
+            }
+        }
+
     }
 }

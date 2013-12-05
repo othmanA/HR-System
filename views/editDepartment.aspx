@@ -17,6 +17,24 @@
         <div class="well">
         <h4>Edit Department</h4>
         <hr />
+
+        <table class="table">
+        
+        <tr>
+            <td>Name: </td>
+            <td>
+                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            </td>
+        </tr>
+        
+        <tr>
+            <td colspan="2">
+                <asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="Edit" CssClass="btn btn-info" />
+            </td>
+        </tr>
+
+
+        </table>
         
         </div>
         </div>

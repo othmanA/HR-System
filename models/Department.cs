@@ -81,6 +81,15 @@ namespace HR
             return handler.ExecuteNonQuery();
         }
 
+        public static int updateName(int department_id, string newName){
+            DatabaseHandler handler = new DatabaseHandler();
+            handler.setSQL("UPDATE [Department] SET department_name = @name WHERE department_id = @id");
+            handler.addParameter("@id", department_id.ToString());
+            handler.addParameter("@name", newName);
+
+            return handler.ExecuteNonQuery();
+        }
+
         public string Name {
             get { return name; }
         }

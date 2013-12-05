@@ -41,7 +41,7 @@
         <tr>
         <td colspan=2>
         
-            <asp:Button ID="Button1" runat="server" Text="Add" onclick="Button1_Click" />
+            <center><asp:Button ID="Button1" runat="server" Text="Add" onclick="Button1_Click" CssClass="btn btn-info btn-small" /></center>
         
         </td>
         </tr>

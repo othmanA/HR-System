@@ -75,6 +75,7 @@
     <Content Include="views\Default.aspx" />
     <Content Include="views\deleteDepartment.aspx" />
     <Content Include="views\departments.aspx" />
+    <Content Include="views\editDepartment.aspx" />
     <Content Include="views\EmployeeAddDocument.aspx" />
     <Content Include="views\EmployeeAddIncome.aspx" />
     <Content Include="views\EmployeeAddRecord.aspx" />
@@ -139,6 +140,13 @@
     </Compile>
     <Compile Include="views\departments.aspx.designer.cs">
       <DependentUpon>departments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\editDepartment.aspx.cs">
+      <DependentUpon>editDepartment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\editDepartment.aspx.designer.cs">
+      <DependentUpon>editDepartment.aspx</DependentUpon>
     </Compile>
     <Compile Include="views\EmployeeAddDocument.aspx.cs">
       <DependentUpon>EmployeeAddDocument.aspx</DependentUpon>

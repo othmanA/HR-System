@@ -247,7 +247,7 @@ namespace HR_SYSTEM.views
             TableHeaderCell expireHeader = new TableHeaderCell();
             TableHeaderCell typeHeader = new TableHeaderCell();
             TableHeaderCell noteHeader = new TableHeaderCell();
-
+            
 
 
             NumberHeader.Text = "Number".ToUpper();

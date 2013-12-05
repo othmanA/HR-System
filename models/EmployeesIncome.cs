@@ -94,5 +94,44 @@ namespace HR
             }
         }
 
+        public static float getALLMontly() {
+            DatabaseHandler handler = new DatabaseHandler();
+            handler.setSQL("SELECT SUM(income_amount) as total FROM Income WHERE income_per = @m");
+            handler.addParameter("@m", "Monthly");
+            handler.queryExecute();
+            try
+            {
+                while (handler.reader.Read())
+                {
+                    return float.Parse(handler.reader["total"].ToString());
+                }
+            }
+            catch (Exception ex) {
+                return 0;
+            }
+            return 0;
+            
+        }
+
+        public static float getALLAn()
+        {
+            DatabaseHandler handler = new DatabaseHandler();
+            handler.setSQL("SELECT SUM(income_amount) as total FROM Income WHERE income_per = @a");
+            handler.addParameter("@a", "Annually");
+            handler.queryExecute();
+            try
+            {
+                while (handler.reader.Read())
+                {
+                    return float.Parse(handler.reader["total"].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+            return 0;
+        }
+
     }
 }

@@ -49,10 +49,17 @@ namespace HR_SYSTEM.views
 
 
             // CREATE A CELL FOR ADMIN DELETE
-            if (Session["admin"].ToString() == "True") {
-                TableHeaderCell deleteHeader = new TableHeaderCell();
-                deleteHeader.Text = "Delete";
-                row.Cells.Add(deleteHeader);
+            try
+            {
+                if (Session["admin"].ToString() == "True")
+                {
+                    TableHeaderCell deleteHeader = new TableHeaderCell();
+                    deleteHeader.Text = "Delete";
+                    row.Cells.Add(deleteHeader);
+                }
+            }
+            catch (Exception e) {
+                Response.Redirect("login.aspx");
             }
 
 
@@ -140,6 +147,8 @@ namespace HR_SYSTEM.views
             EmployeesCollection employeesCollectionHandler = new EmployeesCollection();
             ArrayList employees;
             employees = employeesCollectionHandler.getUnApproved();
+            if (employees.Count == 0)
+                panel1.Visible = false;
 
             foreach (Employee e in employees)
             {

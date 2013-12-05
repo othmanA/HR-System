@@ -32,6 +32,21 @@ namespace HR
             return items;
         }
 
+        public int getCountOfEmployees()
+        {
+            clartItems();
+            DatabaseHandler handler = new DatabaseHandler();
+            handler.setSQL("SELECT count(employee_id) as Expr1 FROM Employee");
+            handler.queryExecute();
+
+            while (handler.reader.Read())
+            {
+                int count = int.Parse(handler.reader["Expr1"].ToString());
+                return count;
+            }
+            return 0;
+        }
+
         public ArrayList getNotWorkingEmployees() {
             clartItems();
             DatabaseHandler handler = new DatabaseHandler();
